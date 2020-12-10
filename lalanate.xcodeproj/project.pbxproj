@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		20DA43952582459900971474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20DA43942582459900971474 /* Assets.xcassets */; };
 		20DA43982582459900971474 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DA43962582459900971474 /* LaunchScreen.storyboard */; };
 		20DA43B5258270C100971474 /* DeliveriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA43B4258270C100971474 /* DeliveriesVC.swift */; };
+		20DA43C32582757A00971474 /* DeliveryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA43C22582757A00971474 /* DeliveryCell.swift */; };
 		DE9903F70EBD2192A6F01D98 /* Pods_lalanate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236BE1D446161F354751C1D5 /* Pods_lalanate.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +23,7 @@
 		20DA43972582459900971474 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20DA43992582459900971474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20DA43B4258270C100971474 /* DeliveriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesVC.swift; sourceTree = "<group>"; };
+		20DA43C22582757A00971474 /* DeliveryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCell.swift; sourceTree = "<group>"; };
 		236BE1D446161F354751C1D5 /* Pods_lalanate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lalanate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DADFC41365FD5ACB45B0CB0 /* Pods-lalanate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lalanate.debug.xcconfig"; path = "Target Support Files/Pods-lalanate/Pods-lalanate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,9 +73,18 @@
 		20DA43B3258270B200971474 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				20DA43C12582756B00971474 /* Cells */,
 				20DA43B4258270C100971474 /* DeliveriesVC.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		20DA43C12582756B00971474 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				20DA43C22582757A00971474 /* DeliveryCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		41E6123C8A2D5FC949AAE688 /* Pods */ = {
@@ -82,7 +93,6 @@
 				6DADFC41365FD5ACB45B0CB0 /* Pods-lalanate.debug.xcconfig */,
 				0384D2D10C65F298322D7926 /* Pods-lalanate.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -207,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20DA43C32582757A00971474 /* DeliveryCell.swift in Sources */,
 				20DA43B5258270C100971474 /* DeliveriesVC.swift in Sources */,
 				20DA438C2582459700971474 /* AppDelegate.swift in Sources */,
 			);
