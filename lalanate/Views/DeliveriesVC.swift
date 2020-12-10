@@ -6,11 +6,27 @@
 //
 
 import UIKit
+import SnapKit
 
 class DeliveriesVC: UIViewController {
   
+  private lazy var tableView: UITableView = {
+    let tv = UITableView()
+    return tv
+  }()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .orange
+    setUpViews()
+  }
+  
+  private func setUpViews() {
+    
+    view.backgroundColor = .white
+    
+    view.addSubview(tableView)
+    tableView.snp.makeConstraints { (make) in
+      make.edges.equalToSuperview()
+    }
   }
 }
