@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20DA438C2582459700971474 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA438B2582459700971474 /* AppDelegate.swift */; };
-		20DA438E2582459700971474 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA438D2582459700971474 /* SceneDelegate.swift */; };
 		20DA43902582459700971474 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA438F2582459700971474 /* ViewController.swift */; };
-		20DA43932582459700971474 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DA43912582459700971474 /* Main.storyboard */; };
 		20DA43952582459900971474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20DA43942582459900971474 /* Assets.xcassets */; };
 		20DA43982582459900971474 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DA43962582459900971474 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,9 +16,7 @@
 /* Begin PBXFileReference section */
 		20DA43882582459700971474 /* lalanate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lalanate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20DA438B2582459700971474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		20DA438D2582459700971474 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		20DA438F2582459700971474 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		20DA43922582459700971474 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20DA43942582459900971474 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20DA43972582459900971474 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20DA43992582459900971474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,9 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				20DA438B2582459700971474 /* AppDelegate.swift */,
-				20DA438D2582459700971474 /* SceneDelegate.swift */,
 				20DA438F2582459700971474 /* ViewController.swift */,
-				20DA43912582459700971474 /* Main.storyboard */,
 				20DA43942582459900971474 /* Assets.xcassets */,
 				20DA43962582459900971474 /* LaunchScreen.storyboard */,
 				20DA43992582459900971474 /* Info.plist */,
@@ -126,7 +120,6 @@
 			files = (
 				20DA43982582459900971474 /* LaunchScreen.storyboard in Resources */,
 				20DA43952582459900971474 /* Assets.xcassets in Resources */,
-				20DA43932582459700971474 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,21 +132,12 @@
 			files = (
 				20DA43902582459700971474 /* ViewController.swift in Sources */,
 				20DA438C2582459700971474 /* AppDelegate.swift in Sources */,
-				20DA438E2582459700971474 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		20DA43912582459700971474 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				20DA43922582459700971474 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		20DA43962582459900971474 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -216,7 +200,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +255,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -296,7 +280,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ngsison.lalanate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +299,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ngsison.lalanate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
