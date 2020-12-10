@@ -40,6 +40,8 @@ class DeliveriesVC: UIViewController {
     
     title = "My Deliveries"
     view.backgroundColor = .white
+    navigationItem.backButtonTitle = ""
+    navigationController?.navigationBar.tintColor = .orange
     
     view.addSubview(tableView)
     tableView.snp.makeConstraints { (make) in
