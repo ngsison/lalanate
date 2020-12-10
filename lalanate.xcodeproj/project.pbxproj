@@ -12,6 +12,7 @@
 		20DA43982582459900971474 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DA43962582459900971474 /* LaunchScreen.storyboard */; };
 		20DA43B5258270C100971474 /* DeliveriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA43B4258270C100971474 /* DeliveriesVC.swift */; };
 		20DA43C32582757A00971474 /* DeliveryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA43C22582757A00971474 /* DeliveryCell.swift */; };
+		20DA43C625827EE800971474 /* DeliveryDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA43C525827EE800971474 /* DeliveryDetailsVC.swift */; };
 		DE9903F70EBD2192A6F01D98 /* Pods_lalanate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236BE1D446161F354751C1D5 /* Pods_lalanate.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		20DA43992582459900971474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20DA43B4258270C100971474 /* DeliveriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesVC.swift; sourceTree = "<group>"; };
 		20DA43C22582757A00971474 /* DeliveryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCell.swift; sourceTree = "<group>"; };
+		20DA43C525827EE800971474 /* DeliveryDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailsVC.swift; sourceTree = "<group>"; };
 		236BE1D446161F354751C1D5 /* Pods_lalanate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lalanate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DADFC41365FD5ACB45B0CB0 /* Pods-lalanate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lalanate.debug.xcconfig"; path = "Target Support Files/Pods-lalanate/Pods-lalanate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +77,7 @@
 			children = (
 				20DA43C12582756B00971474 /* Cells */,
 				20DA43B4258270C100971474 /* DeliveriesVC.swift */,
+				20DA43C525827EE800971474 /* DeliveryDetailsVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20DA43C32582757A00971474 /* DeliveryCell.swift in Sources */,
+				20DA43C625827EE800971474 /* DeliveryDetailsVC.swift in Sources */,
 				20DA43B5258270C100971474 /* DeliveriesVC.swift in Sources */,
 				20DA438C2582459700971474 /* AppDelegate.swift in Sources */,
 			);
