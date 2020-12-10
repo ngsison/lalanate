@@ -38,6 +38,7 @@ class DeliveriesVC: UIViewController {
   
   private func setUpViews() {
     
+    title = "My Deliveries"
     view.backgroundColor = .white
     
     view.addSubview(tableView)
