@@ -8,18 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		20DA438C2582459700971474 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA438B2582459700971474 /* AppDelegate.swift */; };
-		20DA43902582459700971474 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA438F2582459700971474 /* ViewController.swift */; };
 		20DA43952582459900971474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20DA43942582459900971474 /* Assets.xcassets */; };
 		20DA43982582459900971474 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DA43962582459900971474 /* LaunchScreen.storyboard */; };
+		20DA43B5258270C100971474 /* DeliveriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA43B4258270C100971474 /* DeliveriesVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		20DA43882582459700971474 /* lalanate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lalanate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20DA438B2582459700971474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		20DA438F2582459700971474 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		20DA43942582459900971474 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20DA43972582459900971474 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20DA43992582459900971474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20DA43B4258270C100971474 /* DeliveriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +52,21 @@
 		20DA438A2582459700971474 /* lalanate */ = {
 			isa = PBXGroup;
 			children = (
+				20DA43B3258270B200971474 /* Views */,
 				20DA438B2582459700971474 /* AppDelegate.swift */,
-				20DA438F2582459700971474 /* ViewController.swift */,
 				20DA43942582459900971474 /* Assets.xcassets */,
 				20DA43962582459900971474 /* LaunchScreen.storyboard */,
 				20DA43992582459900971474 /* Info.plist */,
 			);
 			path = lalanate;
+			sourceTree = "<group>";
+		};
+		20DA43B3258270B200971474 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				20DA43B4258270C100971474 /* DeliveriesVC.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20DA43902582459700971474 /* ViewController.swift in Sources */,
+				20DA43B5258270C100971474 /* DeliveriesVC.swift in Sources */,
 				20DA438C2582459700971474 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +215,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -261,6 +270,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
