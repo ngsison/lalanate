@@ -6,8 +6,35 @@
 //
 
 import UIKit
+import SnapKit
 
 class DeliveryDetailsVC: UIViewController {
+  
+  // MARK: - UI Props
+  
+  private lazy var scrollView: UIScrollView = {
+    let sv = UIScrollView()
+    sv.alwaysBounceVertical = true
+    sv.backgroundColor = .white
+    return sv
+  }()
+  
+  private lazy var contentView: UIView = {
+    let view = UIView()
+    view.backgroundColor = .green
+    return view
+  }()
+  
+  private lazy var favoriteButton: UIButton = {
+    let btn = UIButton()
+    btn.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
+    btn.setTitle("Add to Favorite", for: .normal)
+    btn.setTitleColor(.white, for: .normal)
+    btn.backgroundColor = .orange
+    btn.layer.cornerRadius = 20
+    btn.clipsToBounds = true
+    return btn
+  }()
   
   // MARK: - Lifecycle Events
   
@@ -22,5 +49,25 @@ class DeliveryDetailsVC: UIViewController {
     
     title = "Delivery Details"
     view.backgroundColor = .white
+    
+    view.addSubview(favoriteButton)
+    favoriteButton.snp.makeConstraints { (make) in
+      make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-20)
+      make.left.right.equalToSuperview().inset(20)
+      make.height.equalTo(40)
+    }
+    
+    scrollView.addSubview(contentView)
+    contentView.snp.makeConstraints { (make) in
+      make.edges.equalToSuperview()
+      make.width.equalToSuperview()
+      make.height.equalTo(1000)
+    }
+    
+    view.addSubview(scrollView)
+    scrollView.snp.makeConstraints { (make) in
+      make.top.left.right.equalToSuperview()
+      make.bottom.equalTo(favoriteButton.snp.top).offset(-10)
+    }
   }
 }
