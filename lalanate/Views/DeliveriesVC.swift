@@ -33,7 +33,9 @@ class DeliveriesVC: UIViewController {
     setUpTableView()
     setUpRxSubscriptions()
     
-    vm.getDeliveries()
+    if vm.deliveries.isEmpty {
+      vm.getDeliveries()
+    }
   }
   
   // MARK: - Private Methods

@@ -13,11 +13,10 @@ class DeliveriesVM: BaseVM {
   // MARK: - Public Props
   
   public var getDeliveriesSuccess = BehaviorRelay<Bool>(value: false)
-  public var deliveries = [Delivery]()
+  public var deliveries = LalaOfflineStorage.shared.loadDeliveries() ?? [Delivery]()
   
   // MARK: - Private Props
   
-  private var pageNumber = 0
   private let totalPages = 5
   private let itemPerPage = 10
   
@@ -36,13 +35,14 @@ class DeliveriesVM: BaseVM {
       return mutableDelivery
     })
     
+    LalaOfflineStorage.shared.saveDeliveries(deliveries: deliveries)
     getDeliveriesSuccess.accept(true)
   }
   
   public func getDeliveries() {
     
     guard !isBusy.value,
-          pageNumber < totalPages else {
+          deliveries.count < totalPages * itemPerPage else {
       return
     }
     
@@ -62,10 +62,10 @@ class DeliveriesVM: BaseVM {
       
       print("success")
       
-      self.pageNumber += 1
       self.deliveries.append(contentsOf: deliveries)
-      
       self.toggleIsBusy(to: false)
+      
+      LalaOfflineStorage.shared.saveDeliveries(deliveries: self.deliveries)
       self.getDeliveriesSuccess.accept(true)
     },
     onError: { error in
