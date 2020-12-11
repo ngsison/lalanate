@@ -17,6 +17,8 @@
 		20397A1A2583FE0D004DF210 /* AnyOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A192583FE0D004DF210 /* AnyOptional.swift */; };
 		20397A1D2583FE30004DF210 /* UserDefaultsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A1C2583FE30004DF210 /* UserDefaultsItem.swift */; };
 		20397A202583FEAF004DF210 /* UserDefaultsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A1F2583FEAF004DF210 /* UserDefaultsObject.swift */; };
+		20397A24258401C7004DF210 /* OfflineStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A23258401C7004DF210 /* OfflineStorage.swift */; };
+		20397A2825840269004DF210 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A2725840269004DF210 /* UserDefaultsStorage.swift */; };
 		206F746C25836576003D485D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F746B25836576003D485D /* UIColorExtension.swift */; };
 		206F747725836FED003D485D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F747625836FED003D485D /* UIViewExtension.swift */; };
 		206F748A2583ADFE003D485D /* LalaHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F74892583ADFE003D485D /* LalaHttpClient.swift */; };
@@ -44,6 +46,8 @@
 		20397A192583FE0D004DF210 /* AnyOptional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyOptional.swift; sourceTree = "<group>"; };
 		20397A1C2583FE30004DF210 /* UserDefaultsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsItem.swift; sourceTree = "<group>"; };
 		20397A1F2583FEAF004DF210 /* UserDefaultsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsObject.swift; sourceTree = "<group>"; };
+		20397A23258401C7004DF210 /* OfflineStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineStorage.swift; sourceTree = "<group>"; };
+		20397A2725840269004DF210 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		206F746B25836576003D485D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		206F747625836FED003D485D /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		206F74892583ADFE003D485D /* LalaHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LalaHttpClient.swift; sourceTree = "<group>"; };
@@ -100,6 +104,15 @@
 				20397A1F2583FEAF004DF210 /* UserDefaultsObject.swift */,
 			);
 			path = DataPersistence;
+			sourceTree = "<group>";
+		};
+		20397A22258401AD004DF210 /* OfflineStorage */ = {
+			isa = PBXGroup;
+			children = (
+				20397A23258401C7004DF210 /* OfflineStorage.swift */,
+				20397A2725840269004DF210 /* UserDefaultsStorage.swift */,
+			);
+			path = OfflineStorage;
 			sourceTree = "<group>";
 		};
 		206F746925836567003D485D /* Utilities */ = {
@@ -181,6 +194,7 @@
 			children = (
 				206F746925836567003D485D /* Utilities */,
 				206F74882583ADD4003D485D /* Networking */,
+				20397A22258401AD004DF210 /* OfflineStorage */,
 				203979ED2583B9D4004DF210 /* Models */,
 				206F748C2583B02C003D485D /* ViewModels */,
 				20DA43B3258270B200971474 /* Views */,
@@ -350,6 +364,7 @@
 				206F746C25836576003D485D /* UIColorExtension.swift in Sources */,
 				203979FC2583BC1B004DF210 /* Sender.swift in Sources */,
 				206F74972583B200003D485D /* Constants.swift in Sources */,
+				20397A2825840269004DF210 /* UserDefaultsStorage.swift in Sources */,
 				206F748A2583ADFE003D485D /* LalaHttpClient.swift in Sources */,
 				206F748E2583B03B003D485D /* BaseVM.swift in Sources */,
 				20DA43B5258270C100971474 /* DeliveriesVC.swift in Sources */,
@@ -360,6 +375,7 @@
 				20397A202583FEAF004DF210 /* UserDefaultsObject.swift in Sources */,
 				20397A002583BE06004DF210 /* DeliveriesVM.swift in Sources */,
 				20DA438C2582459700971474 /* AppDelegate.swift in Sources */,
+				20397A24258401C7004DF210 /* OfflineStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
