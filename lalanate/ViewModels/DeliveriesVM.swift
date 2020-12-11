@@ -23,6 +23,22 @@ class DeliveriesVM: BaseVM {
   
   // MARK: - Public Methods
   
+  public func toggleFavorite(for delivery: Delivery) {
+    
+    deliveries = deliveries.map({ (oldDelivery) -> Delivery in
+      
+      var mutableDelivery = oldDelivery
+      
+      if mutableDelivery.id == delivery.id {
+        mutableDelivery.isFavorite.toggle()
+      }
+      
+      return mutableDelivery
+    })
+    
+    getDeliveriesSuccess.accept(true)
+  }
+  
   public func getDeliveries() {
     
     guard !isBusy.value,

@@ -8,6 +8,10 @@
 import UIKit
 import SnapKit
 
+protocol DeliveryDetailsDelegate {
+  func deliveryDetails(_ deliveryDetailsVC: DeliveryDetailsVC, didToggleFavoriteFor delivery: Delivery)
+}
+
 class DeliveryDetailsVC: UIViewController {
   
   // MARK: - UI Props
@@ -136,6 +140,10 @@ class DeliveryDetailsVC: UIViewController {
     return btn
   }()
   
+  // MARK: - Public Props
+  
+  public var delegate: DeliveryDetailsDelegate?
+  
   // MARK: - Private Props
   
   private var delivery: Delivery
@@ -161,7 +169,7 @@ class DeliveryDetailsVC: UIViewController {
   
   @objc
   private func didTapFavorite() {
-    
+    delegate?.deliveryDetails(self, didToggleFavoriteFor: delivery)
   }
   
   // MARK: - Private Methods

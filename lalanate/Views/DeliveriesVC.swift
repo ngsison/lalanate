@@ -105,6 +105,8 @@ extension DeliveriesVC: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
     let deliveryDetailsVC = DeliveryDetailsVC(delivery: vm.deliveries[indexPath.row])
+    deliveryDetailsVC.delegate = self
+    
     navigationController?.pushViewController(deliveryDetailsVC, animated: true)
   }
   
@@ -121,5 +123,16 @@ extension DeliveriesVC: UITableViewDelegate {
     if contentMaxY < frameMaxY {
       vm.getDeliveries()
     }
+  }
+}
+
+// MARK: - DeliveryDetailsDelegate
+
+extension DeliveriesVC: DeliveryDetailsDelegate {
+  
+  func deliveryDetails(_ deliveryDetailsVC: DeliveryDetailsVC, didToggleFavoriteFor delivery: Delivery) {
+    
+    vm.toggleFavorite(for: delivery)
+    deliveryDetailsVC.navigationController?.popViewController(animated: true)
   }
 }
