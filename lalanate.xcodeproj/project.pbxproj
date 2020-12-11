@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		203979F12583BB05004DF210 /* DeliveriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979F02583BB05004DF210 /* DeliveriesService.swift */; };
 		203979F62583BB44004DF210 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979F52583BB44004DF210 /* Delivery.swift */; };
 		203979F92583BC16004DF210 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979F82583BC16004DF210 /* Route.swift */; };
 		203979FC2583BC1B004DF210 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979FB2583BC1B004DF210 /* Sender.swift */; };
@@ -28,7 +27,6 @@
 
 /* Begin PBXFileReference section */
 		0384D2D10C65F298322D7926 /* Pods-lalanate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lalanate.release.xcconfig"; path = "Target Support Files/Pods-lalanate/Pods-lalanate.release.xcconfig"; sourceTree = "<group>"; };
-		203979F02583BB05004DF210 /* DeliveriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesService.swift; sourceTree = "<group>"; };
 		203979F52583BB44004DF210 /* Delivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
 		203979F82583BC16004DF210 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		203979FB2583BC1B004DF210 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
@@ -72,14 +70,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		203979EF2583BAF4004DF210 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				203979F02583BB05004DF210 /* DeliveriesService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		206F746925836567003D485D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				206F74912583B180003D485D /* Endpoints */,
-				203979EF2583BAF4004DF210 /* Services */,
 				206F74892583ADFE003D485D /* LalaHttpClient.swift */,
 			);
 			path = Networking;
@@ -316,7 +305,6 @@
 			files = (
 				206F74932583B190003D485D /* DeliveriesAPI.swift in Sources */,
 				203979F62583BB44004DF210 /* Delivery.swift in Sources */,
-				203979F12583BB05004DF210 /* DeliveriesService.swift in Sources */,
 				206F747725836FED003D485D /* UIViewExtension.swift in Sources */,
 				203979F92583BC16004DF210 /* Route.swift in Sources */,
 				20DA43C32582757A00971474 /* DeliveryCell.swift in Sources */,
