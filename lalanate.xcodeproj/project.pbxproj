@@ -14,6 +14,9 @@
 		20397A032583C68A004DF210 /* LalaPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A022583C68A004DF210 /* LalaPrint.swift */; };
 		20397A112583EDCE004DF210 /* getDeliveriesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 20397A102583EDCE004DF210 /* getDeliveriesResponse.json */; };
 		20397A152583EE75004DF210 /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A142583EE75004DF210 /* JSONFileReader.swift */; };
+		20397A1A2583FE0D004DF210 /* AnyOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A192583FE0D004DF210 /* AnyOptional.swift */; };
+		20397A1D2583FE30004DF210 /* UserDefaultsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A1C2583FE30004DF210 /* UserDefaultsItem.swift */; };
+		20397A202583FEAF004DF210 /* UserDefaultsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A1F2583FEAF004DF210 /* UserDefaultsObject.swift */; };
 		206F746C25836576003D485D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F746B25836576003D485D /* UIColorExtension.swift */; };
 		206F747725836FED003D485D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F747625836FED003D485D /* UIViewExtension.swift */; };
 		206F748A2583ADFE003D485D /* LalaHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F74892583ADFE003D485D /* LalaHttpClient.swift */; };
@@ -38,6 +41,9 @@
 		20397A022583C68A004DF210 /* LalaPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LalaPrint.swift; sourceTree = "<group>"; };
 		20397A102583EDCE004DF210 /* getDeliveriesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getDeliveriesResponse.json; sourceTree = "<group>"; };
 		20397A142583EE75004DF210 /* JSONFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFileReader.swift; sourceTree = "<group>"; };
+		20397A192583FE0D004DF210 /* AnyOptional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyOptional.swift; sourceTree = "<group>"; };
+		20397A1C2583FE30004DF210 /* UserDefaultsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsItem.swift; sourceTree = "<group>"; };
+		20397A1F2583FEAF004DF210 /* UserDefaultsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsObject.swift; sourceTree = "<group>"; };
 		206F746B25836576003D485D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		206F747625836FED003D485D /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		206F74892583ADFE003D485D /* LalaHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LalaHttpClient.swift; sourceTree = "<group>"; };
@@ -86,10 +92,21 @@
 			path = SampleData;
 			sourceTree = "<group>";
 		};
+		20397A182583FDE4004DF210 /* DataPersistence */ = {
+			isa = PBXGroup;
+			children = (
+				20397A192583FE0D004DF210 /* AnyOptional.swift */,
+				20397A1C2583FE30004DF210 /* UserDefaultsItem.swift */,
+				20397A1F2583FEAF004DF210 /* UserDefaultsObject.swift */,
+			);
+			path = DataPersistence;
+			sourceTree = "<group>";
+		};
 		206F746925836567003D485D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				206F74952583B1AD003D485D /* Constants */,
+				20397A182583FDE4004DF210 /* DataPersistence */,
 				206F746A2583656B003D485D /* Extensions */,
 				20397A022583C68A004DF210 /* LalaPrint.swift */,
 			);
@@ -336,8 +353,11 @@
 				206F748A2583ADFE003D485D /* LalaHttpClient.swift in Sources */,
 				206F748E2583B03B003D485D /* BaseVM.swift in Sources */,
 				20DA43B5258270C100971474 /* DeliveriesVC.swift in Sources */,
+				20397A1A2583FE0D004DF210 /* AnyOptional.swift in Sources */,
 				20397A152583EE75004DF210 /* JSONFileReader.swift in Sources */,
 				20397A032583C68A004DF210 /* LalaPrint.swift in Sources */,
+				20397A1D2583FE30004DF210 /* UserDefaultsItem.swift in Sources */,
+				20397A202583FEAF004DF210 /* UserDefaultsObject.swift in Sources */,
 				20397A002583BE06004DF210 /* DeliveriesVM.swift in Sources */,
 				20DA438C2582459700971474 /* AppDelegate.swift in Sources */,
 			);
