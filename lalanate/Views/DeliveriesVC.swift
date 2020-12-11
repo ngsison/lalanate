@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 class DeliveriesVC: UIViewController {
   
@@ -21,24 +22,46 @@ class DeliveriesVC: UIViewController {
   // MARK: - Private Props
   
   private let vm = DeliveriesVM()
+  private let disposeBag = DisposeBag()
   
   // MARK: - Lifecycle Events
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     setUpViews()
     setUpTableView()
+    setUpRxSubscriptions()
     
     vm.getDeliveries()
   }
   
   // MARK: - Private Methods
   
+  private func setUpRxSubscriptions() {
+    
+    vm.isBusy
+      .subscribe(onNext: { isBusy in
+        print("isBusy: \(isBusy)")
+      }).disposed(by: disposeBag)
+    
+    vm.getDeliveriesSuccess
+      .filter({ $0 })
+      .subscribe(onNext: { _ in
+        self.tableView.reloadData()
+      }).disposed(by: disposeBag)
+    
+    vm.errorMessage
+      .filter({ !$0.isEmpty })
+      .subscribe(onNext: { errorMessage in
+        print(errorMessage)
+      }).disposed(by: disposeBag)
+  }
+  
   private func setUpTableView() {
     
     tableView.dataSource = self
     tableView.delegate = self
-    
     tableView.register(DeliveryCell.self, forCellReuseIdentifier: DeliveryCell.reuseIdentifier)
   }
   
@@ -62,7 +85,7 @@ extension DeliveriesVC: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-    return 5
+    return vm.deliveries.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,6 +102,7 @@ extension DeliveriesVC: UITableViewDataSource {
 extension DeliveriesVC: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
     let deliveryDetailsVC = DeliveryDetailsVC()
     navigationController?.pushViewController(deliveryDetailsVC, animated: true)
   }
