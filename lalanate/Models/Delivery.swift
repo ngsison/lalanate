@@ -35,6 +35,24 @@ public struct Delivery: Codable {
     case surcharge = "surcharge"
     case route = "route"
     case sender = "sender"
+    
+    case isFavorite = "isFavorite"
+  }
+  
+  public init(from decoder: Decoder) throws {
+    
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+    
+    self.id           = try container.decode(String.self, forKey: .id)
+    self.remarks      = try container.decode(String.self, forKey: .remarks)
+    self.pickupTime   = try container.decode(String.self, forKey: .pickupTime)
+    self.goodsPicture = try container.decode(String.self, forKey: .goodsPicture)
+    self.deliveryFee  = try container.decode(String.self, forKey: .deliveryFee)
+    self.surcharge    = try container.decode(String.self, forKey: .surcharge)
+    self.route        = try container.decode(Route.self, forKey: .route)
+    self.sender       = try container.decode(Sender.self, forKey: .sender)
+    
+    self.isFavorite   = (try? container.decode(Bool.self, forKey: .isFavorite)) ?? false
   }
   
   // MARK: - Public Methods
