@@ -42,7 +42,7 @@ class DeliveryDetailsVC: UIViewController {
   private lazy var fromLabel: UILabel = {
     let label = UILabel()
     label.font = .systemFont(ofSize: 16, weight: .medium)
-    label.text = "From"
+    label.text = "From:"
     label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
     return label
   }()
@@ -50,7 +50,6 @@ class DeliveryDetailsVC: UIViewController {
   private lazy var fromValueLabel: UILabel = {
     let label = UILabel()
     label.font = .systemFont(ofSize: 16, weight: .medium)
-    label.text = "Nathaniel Brion Sison"
     label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     return label
   }()
@@ -58,7 +57,7 @@ class DeliveryDetailsVC: UIViewController {
   private lazy var toLabel: UILabel = {
     let label = UILabel()
     label.font = .systemFont(ofSize: 16, weight: .medium)
-    label.text = "To"
+    label.text = "To:"
     label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
     return label
   }()
@@ -66,7 +65,6 @@ class DeliveryDetailsVC: UIViewController {
   private lazy var toValueLabel: UILabel = {
     let label = UILabel()
     label.font = .systemFont(ofSize: 16, weight: .medium)
-    label.text = "Steve Jobs"
     label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     return label
   }()
@@ -119,7 +117,6 @@ class DeliveryDetailsVC: UIViewController {
   private lazy var deliveryFeeValueLabel: UILabel = {
     let label = UILabel()
     label.font = .systemFont(ofSize: 16, weight: .medium)
-    label.text = "$85"
     label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     return label
   }()
@@ -131,7 +128,7 @@ class DeliveryDetailsVC: UIViewController {
   private lazy var favoriteButton: UIButton = {
     let btn = UIButton(type: .system)
     btn.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
-    btn.setTitle("Add to Favorite", for: .normal)
+    btn.setTitle("Add to Favorites", for: .normal)
     btn.setTitleColor(.white, for: .normal)
     btn.backgroundColor = .orange
     btn.setCornerRadius(20)
@@ -163,6 +160,26 @@ class DeliveryDetailsVC: UIViewController {
   
   private func populateDeliveryDetails() {
     
+    fromValueLabel.text = delivery.route.start
+    toValueLabel.text = delivery.route.end
+    
+    if let computedDeliveryFee = delivery.getComputedDeliveryFee() {
+      deliveryFeeValueLabel.text = String(format: "$ %.2f", computedDeliveryFee)
+    } else {
+      deliveryFeeValueLabel.text = "-"
+    }
+    
+    if let imageURL = URL(string: delivery.goodsPicture) {
+      goodsImageView.kf.setImage(with: imageURL, options: [.transition(.fade(0.5))])
+    } else {
+      goodsImageView.image = nil
+    }
+    
+    if delivery.isFavorite {
+      favoriteButton.setTitle("Remove from Favorites", for: .normal)
+    } else {
+      favoriteButton.setTitle("Add to Favorites", for: .normal)
+    }
   }
   
   private func setUpViews() {
