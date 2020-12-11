@@ -11,6 +11,8 @@
 		206F747725836FED003D485D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F747625836FED003D485D /* UIViewExtension.swift */; };
 		206F748A2583ADFE003D485D /* LalaHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F74892583ADFE003D485D /* LalaHttpClient.swift */; };
 		206F748E2583B03B003D485D /* BaseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F748D2583B03B003D485D /* BaseVM.swift */; };
+		206F74932583B190003D485D /* DeliveriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F74922583B190003D485D /* DeliveriesAPI.swift */; };
+		206F74972583B200003D485D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F74962583B200003D485D /* Constants.swift */; };
 		20DA438C2582459700971474 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA438B2582459700971474 /* AppDelegate.swift */; };
 		20DA43952582459900971474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20DA43942582459900971474 /* Assets.xcassets */; };
 		20DA43982582459900971474 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DA43962582459900971474 /* LaunchScreen.storyboard */; };
@@ -26,6 +28,8 @@
 		206F747625836FED003D485D /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		206F74892583ADFE003D485D /* LalaHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LalaHttpClient.swift; sourceTree = "<group>"; };
 		206F748D2583B03B003D485D /* BaseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVM.swift; sourceTree = "<group>"; };
+		206F74922583B190003D485D /* DeliveriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesAPI.swift; sourceTree = "<group>"; };
+		206F74962583B200003D485D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		20DA43882582459700971474 /* lalanate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lalanate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20DA438B2582459700971474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20DA43942582459900971474 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,8 +57,8 @@
 		206F746925836567003D485D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				206F74952583B1AD003D485D /* Constants */,
 				206F746A2583656B003D485D /* Extensions */,
-				206F74882583ADD4003D485D /* Networking */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -71,6 +75,7 @@
 		206F74882583ADD4003D485D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				206F74912583B180003D485D /* Endpoints */,
 				206F74892583ADFE003D485D /* LalaHttpClient.swift */,
 			);
 			path = Networking;
@@ -82,6 +87,22 @@
 				206F748D2583B03B003D485D /* BaseVM.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		206F74912583B180003D485D /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				206F74922583B190003D485D /* DeliveriesAPI.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		206F74952583B1AD003D485D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				206F74962583B200003D485D /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		20DA437F2582459700971474 = {
@@ -106,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				206F746925836567003D485D /* Utilities */,
+				206F74882583ADD4003D485D /* Networking */,
 				206F748C2583B02C003D485D /* ViewModels */,
 				20DA43B3258270B200971474 /* Views */,
 				20DA438B2582459700971474 /* AppDelegate.swift */,
@@ -264,10 +286,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				206F74932583B190003D485D /* DeliveriesAPI.swift in Sources */,
 				206F747725836FED003D485D /* UIViewExtension.swift in Sources */,
 				20DA43C32582757A00971474 /* DeliveryCell.swift in Sources */,
 				20DA43C625827EE800971474 /* DeliveryDetailsVC.swift in Sources */,
 				206F746C25836576003D485D /* UIColorExtension.swift in Sources */,
+				206F74972583B200003D485D /* Constants.swift in Sources */,
 				206F748A2583ADFE003D485D /* LalaHttpClient.swift in Sources */,
 				206F748E2583B03B003D485D /* BaseVM.swift in Sources */,
 				20DA43B5258270C100971474 /* DeliveriesVC.swift in Sources */,
