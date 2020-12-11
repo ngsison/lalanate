@@ -132,6 +132,7 @@ class DeliveryDetailsVC: UIViewController {
     btn.setTitleColor(.white, for: .normal)
     btn.backgroundColor = .orange
     btn.setCornerRadius(20)
+    btn.addTarget(self, action: #selector(didTapFavorite), for: .touchUpInside)
     return btn
   }()
   
@@ -154,6 +155,13 @@ class DeliveryDetailsVC: UIViewController {
     super.viewDidLoad()
     setUpViews()
     populateDeliveryDetails()
+  }
+  
+  // MARK: - Events
+  
+  @objc
+  private func didTapFavorite() {
+    
   }
   
   // MARK: - Private Methods
