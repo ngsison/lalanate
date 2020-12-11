@@ -15,11 +15,18 @@ class DeliveriesVM: BaseVM {
   public var getDeliveriesSuccess = BehaviorRelay<Bool>(value: false)
   public var deliveries = [Delivery]()
   
+  // MARK: - Private Props
+  
+  private var pageNumber = 0
+  private let totalPages = 5
+  private let itemPerPage = 10
+  
   // MARK: - Public Methods
   
   public func getDeliveries() {
     
-    let target = DeliveriesAPI.getDeliveries(offset: 0, limit: 10)
+    let target = DeliveriesAPI.getDeliveries(offset: pageNumber * itemPerPage, limit: itemPerPage)
+    
     toggleIsBusy(to: true)
     
     httpClient.request(target: target) { (response) -> [Delivery] in
@@ -30,8 +37,8 @@ class DeliveriesVM: BaseVM {
     .subscribe(onNext: { deliveries in
       
       print("success")
-      print(deliveries)
       
+      self.pageNumber += 1
       self.deliveries = deliveries
       
       self.toggleIsBusy(to: false)
