@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class DeliveryCell: UITableViewCell {
   
@@ -34,7 +35,6 @@ class DeliveryCell: UITableViewCell {
     let iv = UIImageView()
     iv.contentMode = .scaleAspectFill
     iv.clipsToBounds = true
-    iv.backgroundColor = .orange
     return iv
   }()
   
@@ -102,6 +102,12 @@ class DeliveryCell: UITableViewCell {
       deliveryFeeLabel.text = String(format: "$ %.2f", computedDeliveryFee)
     } else {
       deliveryFeeLabel.text = "-"
+    }
+    
+    if let imageURL = URL(string: delivery.goodsPicture) {
+      goodsImageView.kf.setImage(with: imageURL, options: [.transition(.fade(0.5))])
+    } else {
+      goodsImageView.image = nil
     }
   }
   
