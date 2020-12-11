@@ -129,7 +129,7 @@ class DeliveryDetailsVC: UIViewController {
    */
   
   private lazy var favoriteButton: UIButton = {
-    let btn = UIButton()
+    let btn = UIButton(type: .system)
     btn.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
     btn.setTitle("Add to Favorite", for: .normal)
     btn.setTitleColor(.white, for: .normal)
