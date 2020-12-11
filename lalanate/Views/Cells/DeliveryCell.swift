@@ -64,7 +64,7 @@ class DeliveryCell: UITableViewCell {
   private lazy var favoriteImageView: UIImageView = {
     let iv = UIImageView()
     iv.contentMode = .scaleAspectFit
-    iv.backgroundColor = .red
+    iv.image = #imageLiteral(resourceName: "favorite")
     return iv
   }()
   
