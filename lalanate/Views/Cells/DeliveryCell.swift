@@ -97,7 +97,12 @@ class DeliveryCell: UITableViewCell {
     
     fromLabel.text = "From: \(delivery.route.start)"
     toLabel.text = "To: \(delivery.route.end)"
-    deliveryFeeLabel.text = delivery.deliveryFee
+    
+    if let computedDeliveryFee = delivery.getComputedDeliveryFee() {
+      deliveryFeeLabel.text = String(format: "$ %.2f", computedDeliveryFee)
+    } else {
+      deliveryFeeLabel.text = "-"
+    }
   }
   
   // MARK: - Private Methods
