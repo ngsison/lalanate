@@ -18,15 +18,24 @@ extension DeliveriesAPI: TargetType {
   }
   
   var path: String {
-    return "/v2/deliveries"
+    switch self {
+    case .getDeliveries:
+      return "/v2/deliveries"
+    }
   }
   
   var method: Method {
-    return .get
+    switch self {
+    case .getDeliveries:
+      return .get
+    }
   }
   
   var sampleData: Data {
-    return Data()
+    switch self {
+    case .getDeliveries:
+      return JSONFileReader.getDataFromJSONFile("getDeliveriesResponse")
+    }
   }
   
   var task: Task {

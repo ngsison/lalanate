@@ -12,6 +12,8 @@
 		203979FC2583BC1B004DF210 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979FB2583BC1B004DF210 /* Sender.swift */; };
 		20397A002583BE06004DF210 /* DeliveriesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979FF2583BE06004DF210 /* DeliveriesVM.swift */; };
 		20397A032583C68A004DF210 /* LalaPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A022583C68A004DF210 /* LalaPrint.swift */; };
+		20397A112583EDCE004DF210 /* getDeliveriesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 20397A102583EDCE004DF210 /* getDeliveriesResponse.json */; };
+		20397A152583EE75004DF210 /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A142583EE75004DF210 /* JSONFileReader.swift */; };
 		206F746C25836576003D485D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F746B25836576003D485D /* UIColorExtension.swift */; };
 		206F747725836FED003D485D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F747625836FED003D485D /* UIViewExtension.swift */; };
 		206F748A2583ADFE003D485D /* LalaHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F74892583ADFE003D485D /* LalaHttpClient.swift */; };
@@ -34,6 +36,8 @@
 		203979FB2583BC1B004DF210 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
 		203979FF2583BE06004DF210 /* DeliveriesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesVM.swift; sourceTree = "<group>"; };
 		20397A022583C68A004DF210 /* LalaPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LalaPrint.swift; sourceTree = "<group>"; };
+		20397A102583EDCE004DF210 /* getDeliveriesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getDeliveriesResponse.json; sourceTree = "<group>"; };
+		20397A142583EE75004DF210 /* JSONFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFileReader.swift; sourceTree = "<group>"; };
 		206F746B25836576003D485D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		206F747625836FED003D485D /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		206F74892583ADFE003D485D /* LalaHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LalaHttpClient.swift; sourceTree = "<group>"; };
@@ -74,6 +78,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		20397A0F2583ED5C004DF210 /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				20397A102583EDCE004DF210 /* getDeliveriesResponse.json */,
+			);
+			path = SampleData;
+			sourceTree = "<group>";
+		};
 		206F746925836567003D485D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,8 +108,10 @@
 		206F74882583ADD4003D485D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				20397A0F2583ED5C004DF210 /* SampleData */,
 				206F74912583B180003D485D /* Endpoints */,
 				206F74892583ADFE003D485D /* LalaHttpClient.swift */,
+				20397A142583EE75004DF210 /* JSONFileReader.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -255,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20397A112583EDCE004DF210 /* getDeliveriesResponse.json in Resources */,
 				20DA43982582459900971474 /* LaunchScreen.storyboard in Resources */,
 				20DA43952582459900971474 /* Assets.xcassets in Resources */,
 			);
@@ -321,6 +336,7 @@
 				206F748A2583ADFE003D485D /* LalaHttpClient.swift in Sources */,
 				206F748E2583B03B003D485D /* BaseVM.swift in Sources */,
 				20DA43B5258270C100971474 /* DeliveriesVC.swift in Sources */,
+				20397A152583EE75004DF210 /* JSONFileReader.swift in Sources */,
 				20397A032583C68A004DF210 /* LalaPrint.swift in Sources */,
 				20397A002583BE06004DF210 /* DeliveriesVM.swift in Sources */,
 				20DA438C2582459700971474 /* AppDelegate.swift in Sources */,
