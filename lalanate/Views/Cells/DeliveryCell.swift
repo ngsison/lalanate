@@ -111,7 +111,7 @@ class DeliveryCell: UITableViewCell {
     
     addSubview(containerView)
     containerView.snp.makeConstraints { (make) in
-      make.edges.equalToSuperview().inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+      make.edges.equalToSuperview().inset(10)
     }
   }
 }

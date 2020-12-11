@@ -21,7 +21,24 @@ class DeliveryDetailsVC: UIViewController {
   
   private lazy var contentView: UIView = {
     let view = UIView()
-    view.backgroundColor = .green
+    return view
+  }()
+  
+  private lazy var fromToContainerView: UIView = {
+    let view = UIView()
+    view.backgroundColor = .init(white: 0, alpha: 0.1)
+    return view
+  }()
+  
+  private lazy var goodsContainerView: UIView = {
+    let view = UIView()
+    view.backgroundColor = .init(white: 0, alpha: 0.1)
+    return view
+  }()
+  
+  private lazy var deliveryFeeContainerView: UIView = {
+    let view = UIView()
+    view.backgroundColor = .init(white: 0, alpha: 0.1)
     return view
   }()
   
@@ -57,11 +74,32 @@ class DeliveryDetailsVC: UIViewController {
       make.height.equalTo(40)
     }
     
+    contentView.addSubview(fromToContainerView)
+    fromToContainerView.snp.makeConstraints { (make) in
+      make.top.equalToSuperview().offset(20)
+      make.left.right.equalToSuperview().inset(20)
+      make.height.equalTo(100)
+    }
+    
+    contentView.addSubview(goodsContainerView)
+    goodsContainerView.snp.makeConstraints { (make) in
+      make.top.equalTo(fromToContainerView.snp.bottom).offset(20)
+      make.left.right.equalToSuperview().inset(20)
+      make.height.equalTo(200)
+    }
+    
+    contentView.addSubview(deliveryFeeContainerView)
+    deliveryFeeContainerView.snp.makeConstraints { (make) in
+      make.top.equalTo(goodsContainerView.snp.bottom).offset(20)
+      make.left.right.equalToSuperview().inset(20)
+      make.height.equalTo(70)
+    }
+    
     scrollView.addSubview(contentView)
     contentView.snp.makeConstraints { (make) in
       make.edges.equalToSuperview()
       make.width.equalToSuperview()
-      make.height.equalTo(1000)
+      make.height.equalTo(450)
     }
     
     view.addSubview(scrollView)
