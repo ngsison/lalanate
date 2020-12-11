@@ -49,7 +49,7 @@ class DeliveryDetailsVC: UIViewController {
   
   private lazy var fromValueLabel: UILabel = {
     let label = UILabel()
-    label.font = .systemFont(ofSize: 16)
+    label.font = .systemFont(ofSize: 16, weight: .medium)
     label.text = "Nathaniel Brion Sison"
     label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     return label
@@ -65,7 +65,7 @@ class DeliveryDetailsVC: UIViewController {
   
   private lazy var toValueLabel: UILabel = {
     let label = UILabel()
-    label.font = .systemFont(ofSize: 16)
+    label.font = .systemFont(ofSize: 16, weight: .medium)
     label.text = "Steve Jobs"
     label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     return label
@@ -106,6 +106,22 @@ class DeliveryDetailsVC: UIViewController {
     view.backgroundColor = .lalaLightGray
     view.setCornerRadius(10)
     return view
+  }()
+  
+  private lazy var deliveryFeeLabel: UILabel = {
+    let label = UILabel()
+    label.font = .systemFont(ofSize: 16, weight: .medium)
+    label.text = "Delivery Fee"
+    label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+    return label
+  }()
+  
+  private lazy var deliveryFeeValueLabel: UILabel = {
+    let label = UILabel()
+    label.font = .systemFont(ofSize: 16, weight: .medium)
+    label.text = "$85"
+    label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+    return label
   }()
   
   /*
@@ -210,6 +226,19 @@ class DeliveryDetailsVC: UIViewController {
     /*
      Delivery Fee
      */
+    
+    deliveryFeeContainerView.addSubview(deliveryFeeLabel)
+    deliveryFeeLabel.snp.makeConstraints { (make) in
+      make.centerY.equalToSuperview()
+      make.left.equalToSuperview().offset(10)
+    }
+    
+    deliveryFeeContainerView.addSubview(deliveryFeeValueLabel)
+    deliveryFeeValueLabel.snp.makeConstraints { (make) in
+      make.centerY.equalTo(deliveryFeeLabel)
+      make.right.equalToSuperview().offset(-10)
+      make.left.greaterThanOrEqualTo(deliveryFeeLabel.snp.right).offset(10)
+    }
     
     contentView.addSubview(deliveryFeeContainerView)
     deliveryFeeContainerView.snp.makeConstraints { (make) in

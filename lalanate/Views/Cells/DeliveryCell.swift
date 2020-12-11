@@ -74,7 +74,7 @@ class DeliveryCell: UITableViewCell {
   
   private lazy var deliveryFeeLabel: UILabel = {
     let label = UILabel()
-    label.font = .systemFont(ofSize: 14)
+    label.font = .systemFont(ofSize: 14, weight: .medium)
     label.text = "$85"
     label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
     return label
