@@ -26,19 +26,19 @@ class DeliveryDetailsVC: UIViewController {
   
   private lazy var fromToContainerView: UIView = {
     let view = UIView()
-    view.backgroundColor = .init(white: 0, alpha: 0.1)
+    view.backgroundColor = .lalaLightGray
     return view
   }()
   
   private lazy var goodsContainerView: UIView = {
     let view = UIView()
-    view.backgroundColor = .init(white: 0, alpha: 0.1)
+    view.backgroundColor = .lalaLightGray
     return view
   }()
   
   private lazy var deliveryFeeContainerView: UIView = {
     let view = UIView()
-    view.backgroundColor = .init(white: 0, alpha: 0.1)
+    view.backgroundColor = .lalaLightGray
     return view
   }()
   

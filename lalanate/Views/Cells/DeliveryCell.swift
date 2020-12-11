@@ -17,7 +17,7 @@ class DeliveryCell: UITableViewCell {
   
   private lazy var containerView: UIView = {
     let view = UIView()
-    view.backgroundColor = .lightGray
+    view.backgroundColor = .lalaLightGray
     view.layer.cornerRadius = 10
     view.clipsToBounds = true
     return view
@@ -75,6 +75,8 @@ class DeliveryCell: UITableViewCell {
   // MARK: - Private Methods
   
   public func setUpViews() {
+    
+    selectionStyle = .none
     
     containerView.addSubview(goodsImageView)
     goodsImageView.snp.makeConstraints { (make) in
