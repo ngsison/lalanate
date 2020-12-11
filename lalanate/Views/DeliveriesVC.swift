@@ -104,7 +104,7 @@ extension DeliveriesVC: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-    let deliveryDetailsVC = DeliveryDetailsVC()
+    let deliveryDetailsVC = DeliveryDetailsVC(delivery: vm.deliveries[indexPath.row])
     navigationController?.pushViewController(deliveryDetailsVC, animated: true)
   }
   

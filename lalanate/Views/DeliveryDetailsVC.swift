@@ -138,14 +138,32 @@ class DeliveryDetailsVC: UIViewController {
     return btn
   }()
   
+  // MARK: - Private Props
+  
+  private var delivery: Delivery
+  
   // MARK: - Lifecycle Events
+  
+  init(delivery: Delivery) {
+    self.delivery = delivery
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError()
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setUpViews()
+    populateDeliveryDetails()
   }
   
   // MARK: - Private Methods
+  
+  private func populateDeliveryDetails() {
+    
+  }
   
   private func setUpViews() {
     
