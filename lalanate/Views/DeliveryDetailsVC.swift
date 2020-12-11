@@ -48,8 +48,7 @@ class DeliveryDetailsVC: UIViewController {
     btn.setTitle("Add to Favorite", for: .normal)
     btn.setTitleColor(.white, for: .normal)
     btn.backgroundColor = .orange
-    btn.layer.cornerRadius = 20
-    btn.clipsToBounds = true
+    btn.setCornerRadius(20)
     return btn
   }()
   

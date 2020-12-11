@@ -18,8 +18,7 @@ class DeliveryCell: UITableViewCell {
   private lazy var containerView: UIView = {
     let view = UIView()
     view.backgroundColor = .lalaLightGray
-    view.layer.cornerRadius = 10
-    view.clipsToBounds = true
+    view.setCornerRadius(10)
     return view
   }()
   
