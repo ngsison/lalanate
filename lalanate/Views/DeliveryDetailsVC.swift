@@ -35,6 +35,7 @@ class DeliveryDetailsVC: UIViewController {
   private lazy var fromToContainerView: UIView = {
     let view = UIView()
     view.backgroundColor = .lalaLightGray
+    view.setCornerRadius(10)
     return view
   }()
   
@@ -77,7 +78,23 @@ class DeliveryDetailsVC: UIViewController {
   private lazy var goodsContainerView: UIView = {
     let view = UIView()
     view.backgroundColor = .lalaLightGray
+    view.setCornerRadius(10)
     return view
+  }()
+  
+  private lazy var goodsLabel: UILabel = {
+    let label = UILabel()
+    label.text = "Goods to deliver"
+    label.font = .systemFont(ofSize: 20, weight: .medium)
+    return label
+  }()
+  
+  private lazy var goodsImageView: UIImageView = {
+    let iv = UIImageView()
+    iv.contentMode = .scaleAspectFill
+    iv.setCornerRadius(10)
+    iv.backgroundColor = .orange
+    return iv
   }()
   
   /*
@@ -87,6 +104,7 @@ class DeliveryDetailsVC: UIViewController {
   private lazy var deliveryFeeContainerView: UIView = {
     let view = UIView()
     view.backgroundColor = .lalaLightGray
+    view.setCornerRadius(10)
     return view
   }()
   
@@ -170,11 +188,23 @@ class DeliveryDetailsVC: UIViewController {
      Goods to deliver
      */
     
+    goodsContainerView.addSubview(goodsLabel)
+    goodsLabel.snp.makeConstraints { (make) in
+      make.top.left.right.equalToSuperview().inset(10)
+    }
+    
+    goodsContainerView.addSubview(goodsImageView)
+    goodsImageView.snp.makeConstraints { (make) in
+      make.top.equalTo(goodsLabel.snp.bottom).offset(10)
+      make.left.bottom.equalToSuperview().inset(10)
+      make.width.equalTo(220)
+    }
+    
     contentView.addSubview(goodsContainerView)
     goodsContainerView.snp.makeConstraints { (make) in
       make.top.equalTo(fromToContainerView.snp.bottom).offset(20)
       make.left.right.equalToSuperview().inset(20)
-      make.height.equalTo(200)
+      make.height.equalTo(250)
     }
     
     /*
@@ -196,7 +226,7 @@ class DeliveryDetailsVC: UIViewController {
     contentView.snp.makeConstraints { (make) in
       make.edges.equalToSuperview()
       make.width.equalToSuperview()
-      make.height.equalTo(450)
+      make.height.equalTo(500)
     }
     
     view.addSubview(scrollView)
