@@ -112,4 +112,17 @@ extension DeliveriesVC: UITableViewDelegate {
     
     return DeliveryCell.preferredHeight
   }
+  
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    
+    let frameMaxY = scrollView.frame.maxY
+    let contentMaxY = scrollView.contentSize.height - scrollView.contentOffset.y
+    
+    print("contentMaxY: \(contentMaxY)")
+    print("frameMaxY: \(frameMaxY)")
+    
+    if contentMaxY < frameMaxY {
+      vm.getDeliveries()
+    }
+  }
 }
