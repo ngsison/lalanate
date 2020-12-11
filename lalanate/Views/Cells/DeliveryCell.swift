@@ -15,12 +15,20 @@ class DeliveryCell: UITableViewCell {
   
   // MARK: - UI Props
   
+  /*
+   Container View
+   */
+  
   private lazy var containerView: UIView = {
     let view = UIView()
     view.backgroundColor = .lalaLightGray
     view.setCornerRadius(10)
     return view
   }()
+  
+  /*
+   Goods
+   */
   
   private lazy var goodsImageView: UIImageView = {
     let iv = UIImageView()
@@ -30,20 +38,28 @@ class DeliveryCell: UITableViewCell {
     return iv
   }()
   
+  /*
+   From and To
+   */
+  
   private lazy var fromLabel: UILabel = {
     let label = UILabel()
-    label.font = .systemFont(ofSize: 14)
+    label.font = .systemFont(ofSize: 16)
     label.text = "From: Nathaniel Brion Sison"
     return label
   }()
   
   private lazy var toLabel: UILabel = {
     let label = UILabel()
-    label.font = .systemFont(ofSize: 14)
+    label.font = .systemFont(ofSize: 16)
     label.text = "To: Steve Jobs"
     label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     return label
   }()
+  
+  /*
+   Favorite
+   */
   
   private lazy var favoriteImageView: UIImageView = {
     let iv = UIImageView()
@@ -51,6 +67,10 @@ class DeliveryCell: UITableViewCell {
     iv.backgroundColor = .red
     return iv
   }()
+  
+  /*
+   Delivery Fee
+   */
   
   private lazy var deliveryFeeLabel: UILabel = {
     let label = UILabel()
@@ -77,11 +97,19 @@ class DeliveryCell: UITableViewCell {
     
     selectionStyle = .none
     
+    /*
+     Goods
+     */
+    
     containerView.addSubview(goodsImageView)
     goodsImageView.snp.makeConstraints { (make) in
       make.top.left.bottom.equalToSuperview()
-      make.width.equalTo(120)
+      make.width.equalTo(110)
     }
+    
+    /*
+     From and To
+     */
     
     containerView.addSubview(fromLabel)
     fromLabel.snp.makeConstraints { (make) in
@@ -95,6 +123,10 @@ class DeliveryCell: UITableViewCell {
       make.left.equalTo(fromLabel)
     }
     
+    /*
+     Favorite ImageView
+     */
+    
     containerView.addSubview(favoriteImageView)
     favoriteImageView.snp.makeConstraints { (make) in
       make.centerY.equalTo(fromLabel.snp.centerY)
@@ -103,12 +135,20 @@ class DeliveryCell: UITableViewCell {
       make.width.height.equalTo(20)
     }
     
+    /*
+     Delivery Fee
+     */
+    
     containerView.addSubview(deliveryFeeLabel)
     deliveryFeeLabel.snp.makeConstraints { (make) in
       make.centerY.equalTo(toLabel)
       make.left.greaterThanOrEqualTo(toLabel.snp.right).offset(10)
       make.right.equalToSuperview().offset(-10)
     }
+    
+    /*
+     Container View
+     */
     
     addSubview(containerView)
     containerView.snp.makeConstraints { (make) in
