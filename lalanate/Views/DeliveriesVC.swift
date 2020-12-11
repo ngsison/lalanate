@@ -92,6 +92,7 @@ extension DeliveriesVC: UITableViewDataSource {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: DeliveryCell.reuseIdentifier,
                                              for: indexPath) as! DeliveryCell
+    cell.configure(with: vm.deliveries[indexPath.row])
     
     return cell
   }

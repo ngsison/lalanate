@@ -91,6 +91,15 @@ class DeliveryCell: UITableViewCell {
     fatalError()
   }
   
+  // MARK: - Public Methods
+  
+  public func configure(with delivery: Delivery) {
+    
+    fromLabel.text = "From: \(delivery.route.start)"
+    toLabel.text = "To: \(delivery.route.end)"
+    deliveryFeeLabel.text = delivery.deliveryFee
+  }
+  
   // MARK: - Private Methods
   
   public func setUpViews() {
