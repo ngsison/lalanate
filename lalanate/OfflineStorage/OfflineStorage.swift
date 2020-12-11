@@ -14,6 +14,9 @@ protocol OfflineStorage {
 
 struct LalaOfflineStorage: OfflineStorage {
   
+  static let shared = LalaOfflineStorage()
+  private init() {}
+  
   private let storage = UserDefaultsStorage.shared
   
   func saveDeliveries(deliveries: [Delivery]) {

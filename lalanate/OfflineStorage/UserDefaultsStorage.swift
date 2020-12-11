@@ -10,7 +10,6 @@ import Foundation
 class UserDefaultsStorage {
   
   static let shared = UserDefaultsStorage()
-  
   private init() {}
   
   @UserDefaultsObject(key: "deliveries")
