@@ -97,6 +97,7 @@ class DeliveryCell: UITableViewCell {
     
     fromLabel.text = "From: \(delivery.route.start)"
     toLabel.text = "To: \(delivery.route.end)"
+    favoriteImageView.isHidden = !delivery.isFavorite
     
     if let computedDeliveryFee = delivery.getComputedDeliveryFee() {
       deliveryFeeLabel.text = String(format: "$ %.2f", computedDeliveryFee)

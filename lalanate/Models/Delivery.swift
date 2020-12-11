@@ -22,6 +22,21 @@ public struct Delivery: Codable {
   public var route: Route
   public var sender: Sender
   
+  public var isFavorite = false
+  
+  // MARK: - Coding Keys
+  
+  enum CodingKeys: String, CodingKey {
+    case id = "id"
+    case remarks = "remarks"
+    case pickupTime = "pickupTime"
+    case goodsPicture = "goodsPicture"
+    case deliveryFee = "deliveryFee"
+    case surcharge = "surcharge"
+    case route = "route"
+    case sender = "sender"
+  }
+  
   // MARK: - Public Methods
   
   public func getComputedDeliveryFee() -> Double? {
