@@ -45,14 +45,12 @@ class DeliveryCell: UITableViewCell {
   private lazy var fromLabel: UILabel = {
     let label = UILabel()
     label.font = .systemFont(ofSize: 16)
-    label.text = "From: Nathaniel Brion Sison"
     return label
   }()
   
   private lazy var toLabel: UILabel = {
     let label = UILabel()
     label.font = .systemFont(ofSize: 16)
-    label.text = "To: Steve Jobs"
     label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     return label
   }()
@@ -75,7 +73,6 @@ class DeliveryCell: UITableViewCell {
   private lazy var deliveryFeeLabel: UILabel = {
     let label = UILabel()
     label.font = .systemFont(ofSize: 14, weight: .medium)
-    label.text = "$85"
     label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
     return label
   }()
