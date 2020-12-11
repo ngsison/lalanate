@@ -10,6 +10,8 @@
 		203979F62583BB44004DF210 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979F52583BB44004DF210 /* Delivery.swift */; };
 		203979F92583BC16004DF210 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979F82583BC16004DF210 /* Route.swift */; };
 		203979FC2583BC1B004DF210 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979FB2583BC1B004DF210 /* Sender.swift */; };
+		20397A002583BE06004DF210 /* DeliveriesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979FF2583BE06004DF210 /* DeliveriesVM.swift */; };
+		20397A032583C68A004DF210 /* LalaPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A022583C68A004DF210 /* LalaPrint.swift */; };
 		206F746C25836576003D485D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F746B25836576003D485D /* UIColorExtension.swift */; };
 		206F747725836FED003D485D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F747625836FED003D485D /* UIViewExtension.swift */; };
 		206F748A2583ADFE003D485D /* LalaHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F74892583ADFE003D485D /* LalaHttpClient.swift */; };
@@ -30,6 +32,8 @@
 		203979F52583BB44004DF210 /* Delivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
 		203979F82583BC16004DF210 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		203979FB2583BC1B004DF210 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		203979FF2583BE06004DF210 /* DeliveriesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesVM.swift; sourceTree = "<group>"; };
+		20397A022583C68A004DF210 /* LalaPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LalaPrint.swift; sourceTree = "<group>"; };
 		206F746B25836576003D485D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		206F747625836FED003D485D /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		206F74892583ADFE003D485D /* LalaHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LalaHttpClient.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 			children = (
 				206F74952583B1AD003D485D /* Constants */,
 				206F746A2583656B003D485D /* Extensions */,
+				20397A022583C68A004DF210 /* LalaPrint.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				206F748D2583B03B003D485D /* BaseVM.swift */,
+				203979FF2583BE06004DF210 /* DeliveriesVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -315,6 +321,8 @@
 				206F748A2583ADFE003D485D /* LalaHttpClient.swift in Sources */,
 				206F748E2583B03B003D485D /* BaseVM.swift in Sources */,
 				20DA43B5258270C100971474 /* DeliveriesVC.swift in Sources */,
+				20397A032583C68A004DF210 /* LalaPrint.swift in Sources */,
+				20397A002583BE06004DF210 /* DeliveriesVM.swift in Sources */,
 				20DA438C2582459700971474 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

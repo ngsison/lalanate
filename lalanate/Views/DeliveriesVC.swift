@@ -18,12 +18,18 @@ class DeliveriesVC: UIViewController {
     return tv
   }()
   
+  // MARK: - Private Props
+  
+  private let vm = DeliveriesVM()
+  
   // MARK: - Lifecycle Events
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setUpViews()
     setUpTableView()
+    
+    vm.getDeliveries()
   }
   
   // MARK: - Private Methods
