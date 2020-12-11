@@ -46,10 +46,10 @@ class DeliveriesVM: BaseVM {
       return
     }
     
-    print("offset: \(pageNumber * itemPerPage)")
+    print("offset: \(deliveries.count)")
     print("itemPerPage: \(itemPerPage)")
     
-    let target = DeliveriesAPI.getDeliveries(offset: pageNumber * itemPerPage, limit: itemPerPage)
+    let target = DeliveriesAPI.getDeliveries(offset: deliveries.count, limit: itemPerPage)
     
     toggleIsBusy(to: true)
     
