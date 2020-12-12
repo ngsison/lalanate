@@ -20,6 +20,9 @@ class DeliveriesVM: BaseVM {
   private let totalPages = 5
   private let itemPerPage = 10
   
+//  private let dataStore: DataStorageType = LalaCoreDataStorage.shared
+  private let dataStore: DataStorageType = LalaUserDefaultsStorage.shared
+  
   // MARK: - Public Methods
   
   public func toggleFavorite(for delivery: Delivery) {
@@ -33,7 +36,7 @@ class DeliveriesVM: BaseVM {
       return oldDelivery
     })
     
-    LalaUserDefaultsStorage.shared.saveDeliveries(deliveries: deliveries)
+    dataStore.saveDeliveries(deliveries: deliveries)
     getDeliveriesSuccess.accept(true)
   }
   
@@ -60,9 +63,9 @@ class DeliveriesVM: BaseVM {
       print("success")
       
       self.deliveries.append(contentsOf: deliveries)
-      self.toggleIsBusy(to: false)
+      self.dataStore.saveDeliveries(deliveries: self.deliveries)
       
-      LalaUserDefaultsStorage.shared.saveDeliveries(deliveries: self.deliveries)
+      self.toggleIsBusy(to: false)
       self.getDeliveriesSuccess.accept(true)
     },
     onError: { error in
