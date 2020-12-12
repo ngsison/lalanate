@@ -12,6 +12,14 @@ class CoreDataStack {
   static let shared = CoreDataStack()
   private init() {}
   
+  // MARK: - Core Data Decoder
+  
+  static var decoder: JSONDecoder {
+    let decoder = JSONDecoder()
+    decoder.userInfo[CodingUserInfoKey.managedObjectContext] = CoreDataStack.shared.persistentContainer.viewContext
+    return decoder
+  }
+  
   // MARK: - Core Data stack
   
   lazy var persistentContainer: NSPersistentContainer = {

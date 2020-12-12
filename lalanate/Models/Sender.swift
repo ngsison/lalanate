@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+@objc(Sender)
 class Sender: NSManagedObject, Codable {
   
   @nonobjc

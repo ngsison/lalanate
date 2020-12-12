@@ -26,13 +26,11 @@ class DeliveriesVM: BaseVM {
     
     deliveries = deliveries.map({ (oldDelivery) -> Delivery in
       
-      var mutableDelivery = oldDelivery
-      
-      if mutableDelivery.id == delivery.id {
-        mutableDelivery.isFavorite.toggle()
+      if oldDelivery.id == delivery.id {
+        oldDelivery.isFavorite.toggle()
       }
       
-      return mutableDelivery
+      return oldDelivery
     })
     
     LalaOfflineStorage.shared.saveDeliveries(deliveries: deliveries)
@@ -55,8 +53,7 @@ class DeliveriesVM: BaseVM {
     
     httpClient.request(target: target) { (response) -> [Delivery] in
       
-      let deliveries = try JSONDecoder().decode([Delivery].self, from: response.data)
-      return deliveries
+      return try CoreDataStack.decoder.decode([Delivery].self, from: response.data)
     }
     .subscribe(onNext: { deliveries in
       
@@ -71,7 +68,7 @@ class DeliveriesVM: BaseVM {
     onError: { error in
       
       print("failed")
-      print(error)
+      print(error.localizedDescription)
       
       self.publishErrorMessage("Something went wrong")
       
