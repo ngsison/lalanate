@@ -17,7 +17,7 @@ struct UserDefaultsObject<T> where T: Codable {
   public var wrappedValue: T {
     get {
       guard let data = storage.data(forKey: key),
-            let object = try? JSONDecoder().decode(T.self, from: data) else {
+            let object = try? CoreDataStack.decoder.decode(T.self, from: data) else {
         return defaultValue
       }
       return object
