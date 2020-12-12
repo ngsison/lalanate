@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Route: Codable {
+public struct XRoute: Codable {
   
   public var start: String
   public var end: String

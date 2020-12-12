@@ -13,7 +13,7 @@ class DeliveriesVM: BaseVM {
   // MARK: - Public Props
   
   public var getDeliveriesSuccess = BehaviorRelay<Bool>(value: false)
-  public var deliveries = LalaOfflineStorage.shared.loadDeliveries() ?? [Delivery]()
+  public var deliveries = LalaOfflineStorage.shared.loadDeliveries() ?? [XDelivery]()
   
   // MARK: - Private Props
   
@@ -22,9 +22,9 @@ class DeliveriesVM: BaseVM {
   
   // MARK: - Public Methods
   
-  public func toggleFavorite(for delivery: Delivery) {
+  public func toggleFavorite(for delivery: XDelivery) {
     
-    deliveries = deliveries.map({ (oldDelivery) -> Delivery in
+    deliveries = deliveries.map({ (oldDelivery) -> XDelivery in
       
       var mutableDelivery = oldDelivery
       
@@ -53,9 +53,9 @@ class DeliveriesVM: BaseVM {
     
     toggleIsBusy(to: true)
     
-    httpClient.request(target: target) { (response) -> [Delivery] in
+    httpClient.request(target: target) { (response) -> [XDelivery] in
       
-      let deliveries = try JSONDecoder().decode([Delivery].self, from: response.data)
+      let deliveries = try JSONDecoder().decode([XDelivery].self, from: response.data)
       return deliveries
     }
     .subscribe(onNext: { deliveries in

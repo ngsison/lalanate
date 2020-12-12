@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Sender: Codable {
+public struct XSender: Codable {
   
   public var phone: String
   public var name: String

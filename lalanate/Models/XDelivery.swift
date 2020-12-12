@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Delivery
 
-public struct Delivery: Codable {
+public struct XDelivery: Codable {
   
   // MARK: - Public Props
   
@@ -19,8 +19,8 @@ public struct Delivery: Codable {
   public var goodsPicture: String
   public var deliveryFee: String
   public var surcharge: String
-  public var route: Route
-  public var sender: Sender
+  public var route: XRoute
+  public var sender: XSender
   
   public var isFavorite = false
   
@@ -49,8 +49,8 @@ public struct Delivery: Codable {
     self.goodsPicture = try container.decode(String.self, forKey: .goodsPicture)
     self.deliveryFee  = try container.decode(String.self, forKey: .deliveryFee)
     self.surcharge    = try container.decode(String.self, forKey: .surcharge)
-    self.route        = try container.decode(Route.self, forKey: .route)
-    self.sender       = try container.decode(Sender.self, forKey: .sender)
+    self.route        = try container.decode(XRoute.self, forKey: .route)
+    self.sender       = try container.decode(XSender.self, forKey: .sender)
     
     self.isFavorite   = (try? container.decode(Bool.self, forKey: .isFavorite)) ?? false
   }

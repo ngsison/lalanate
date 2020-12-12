@@ -90,7 +90,7 @@ class DeliveryCell: UITableViewCell {
   
   // MARK: - Public Methods
   
-  public func configure(with delivery: Delivery) {
+  public func configure(with delivery: XDelivery) {
     
     fromLabel.text = "From: \(delivery.route.start)"
     toLabel.text = "To: \(delivery.route.end)"

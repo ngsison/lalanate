@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol DeliveryDetailsDelegate {
-  func deliveryDetails(_ deliveryDetailsVC: DeliveryDetailsVC, didToggleFavoriteFor delivery: Delivery)
+  func deliveryDetails(_ deliveryDetailsVC: DeliveryDetailsVC, didToggleFavoriteFor delivery: XDelivery)
 }
 
 class DeliveryDetailsVC: UIViewController {
@@ -146,11 +146,11 @@ class DeliveryDetailsVC: UIViewController {
   
   // MARK: - Private Props
   
-  private var delivery: Delivery
+  private var delivery: XDelivery
   
   // MARK: - Lifecycle Events
   
-  init(delivery: Delivery) {
+  init(delivery: XDelivery) {
     self.delivery = delivery
     super.init(nibName: nil, bundle: nil)
   }
