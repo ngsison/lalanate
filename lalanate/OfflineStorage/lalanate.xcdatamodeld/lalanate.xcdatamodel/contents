@@ -7,9 +7,14 @@
         <attribute name="isFavorite" transient="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="pickupTime" attributeType="String"/>
         <attribute name="remarks" attributeType="String"/>
-        <attribute name="route" attributeType="Transformable" customClassName="Route"/>
-        <attribute name="sender" attributeType="Transformable" customClassName="Sender"/>
+        <attribute name="route" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="Route"/>
+        <attribute name="sender" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="Sender"/>
         <attribute name="surcharge" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Route" representedClassName="Route" syncable="YES">
         <attribute name="end" attributeType="String"/>
