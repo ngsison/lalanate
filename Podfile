@@ -15,7 +15,6 @@ target 'lalanate' do
   
   # Network
   pod 'Moya/RxSwift', '14.0.0'
-  pod 'SwiftyJSON', '5.0.0'
   
   # Rx
   pod 'RxSwift', '5.1.1'
