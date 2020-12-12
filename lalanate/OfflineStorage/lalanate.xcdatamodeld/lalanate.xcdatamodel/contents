@@ -4,6 +4,7 @@
         <attribute name="deliveryFee" attributeType="String"/>
         <attribute name="goodsPicture" attributeType="String"/>
         <attribute name="id" attributeType="String"/>
+        <attribute name="isFavorite" transient="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="pickupTime" attributeType="String"/>
         <attribute name="remarks" attributeType="String"/>
         <attribute name="route" attributeType="Transformable" customClassName="MORoute"/>
@@ -20,7 +21,7 @@
         <attribute name="phone" attributeType="String"/>
     </entity>
     <elements>
-        <element name="MODelivery" positionX="-63" positionY="-18" width="128" height="149"/>
+        <element name="MODelivery" positionX="-63" positionY="-18" width="128" height="164"/>
         <element name="MOSender" positionX="-54" positionY="-9" width="128" height="74"/>
         <element name="MORoute" positionX="-36" positionY="27" width="128" height="59"/>
     </elements>
