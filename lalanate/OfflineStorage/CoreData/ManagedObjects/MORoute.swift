@@ -8,7 +8,9 @@
 import Foundation
 import CoreData
 
-class MORoute: NSManagedObject, Decodable {
+class MORoute: NSManagedObject, Codable {
+  
+  // MARK: - Conformance to Decodable
   
   enum CodingKeys: CodingKey {
     case start
@@ -27,5 +29,15 @@ class MORoute: NSManagedObject, Decodable {
     
     self.start = try container.decode(String.self, forKey: .start)
     self.end = try container.decode(String.self, forKey: .end)
+  }
+  
+  // MARK: - Conformance to Encodable
+  
+  func encode(to encoder: Encoder) throws {
+    
+    var container = encoder.container(keyedBy: CodingKeys.self)
+    
+    try container.encode(start, forKey: .start)
+    try container.encode(end, forKey: .end)
   }
 }

@@ -136,8 +136,8 @@
 			children = (
 				20397ADB25849973004DF210 /* ManagedObjects */,
 				20397ADD25849A36004DF210 /* CoreDataStack.swift */,
-				20397B4025850A76004DF210 /* DecoderError.swift */,
 				20397B3D25850694004DF210 /* CodingUserInfoKeyExtension.swift */,
+				20397B4025850A76004DF210 /* DecoderError.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";

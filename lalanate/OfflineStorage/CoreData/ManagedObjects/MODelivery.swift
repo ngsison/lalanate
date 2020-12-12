@@ -8,7 +8,9 @@
 import Foundation
 import CoreData
 
-class MODelivery: NSManagedObject, Decodable {
+class MODelivery: NSManagedObject, Codable {
+  
+  // MARK: - Conformance to Decodable
   
   enum CodingKeys: CodingKey {
     case id
@@ -41,5 +43,22 @@ class MODelivery: NSManagedObject, Decodable {
     self.route = try container.decode(MORoute.self, forKey: .route)
     self.sender = try container.decode(MOSender.self, forKey: .sender)
     self.isFavorite = try container.decode(Bool.self, forKey: .isFavorite)
+  }
+  
+  // MARK: - Conformance to Encodable
+  
+  func encode(to encoder: Encoder) throws {
+    
+    var container = encoder.container(keyedBy: CodingKeys.self)
+    
+    try container.encode(id, forKey: .id)
+    try container.encode(remarks, forKey: .remarks)
+    try container.encode(pickupTime, forKey: .pickupTime)
+    try container.encode(goodsPicture, forKey: .goodsPicture)
+    try container.encode(deliveryFee, forKey: .deliveryFee)
+    try container.encode(surcharge, forKey: .surcharge)
+    try container.encode(route, forKey: .route)
+    try container.encode(sender, forKey: .sender)
+    try container.encode(isFavorite, forKey: .isFavorite)
   }
 }
