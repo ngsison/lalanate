@@ -1,14 +1,31 @@
 //
-//  MODelivery.swift
+//  Delivery.swift
 //  lalanate
 //
-//  Created by Nathaniel Brion Sison on 12/12/20.
+//  Created by Nathaniel Brion Sison on 12/11/20.
 //
 
 import Foundation
 import CoreData
 
-class MODelivery: NSManagedObject, Codable {
+class Delivery: NSManagedObject, Codable {
+  
+  @nonobjc
+  public class func fetchRequest() -> NSFetchRequest<Delivery> {
+    return NSFetchRequest<Delivery>(entityName: "Delivery")
+  }
+  
+  // MARK: - Public Props
+  
+  @NSManaged public var id: String
+  @NSManaged public var remarks: String
+  @NSManaged public var pickupTime: String
+  @NSManaged public var goodsPicture: String
+  @NSManaged public var deliveryFee: String
+  @NSManaged public var surcharge: String
+  @NSManaged public var route: Route
+  @NSManaged public var sender: Sender
+  @NSManaged public var isFavorite: Bool
   
   // MARK: - Conformance to Decodable
   
@@ -40,9 +57,9 @@ class MODelivery: NSManagedObject, Codable {
     self.goodsPicture = try container.decode(String.self, forKey: .goodsPicture)
     self.deliveryFee = try container.decode(String.self, forKey: .deliveryFee)
     self.surcharge = try container.decode(String.self, forKey: .surcharge)
-    self.route = try container.decode(MORoute.self, forKey: .route)
-    self.sender = try container.decode(MOSender.self, forKey: .sender)
-    self.isFavorite = try container.decode(Bool.self, forKey: .isFavorite)
+    self.route = try container.decode(Route.self, forKey: .route)
+    self.sender = try container.decode(Sender.self, forKey: .sender)
+    self.isFavorite = try container.decodeIfPresent(Bool.self, forKey: .isFavorite) ?? false
   }
   
   // MARK: - Conformance to Encodable
@@ -60,5 +77,33 @@ class MODelivery: NSManagedObject, Codable {
     try container.encode(route, forKey: .route)
     try container.encode(sender, forKey: .sender)
     try container.encode(isFavorite, forKey: .isFavorite)
+  }
+  
+  // MARK: - Public Methods
+  
+  public func getComputedDeliveryFee() -> Double? {
+    
+    guard let deliveryFee = getDoubleValue(for: self.deliveryFee),
+          let surcharge = getDoubleValue(for: self.surcharge) else {
+      
+      return nil
+    }
+    
+    return deliveryFee + surcharge
+  }
+  
+  // MARK: - Private Methods
+  
+  private func getDoubleValue(for string: String) -> Double? {
+    
+    var allNumbers = ""
+    
+    for character in string {
+      if character.isNumber || character == "." {
+        allNumbers.append(character)
+      }
+    }
+    
+    return Double(allNumbers)
   }
 }

@@ -1,14 +1,25 @@
 //
-//  MOSender.swift
+//  Sender.swift
 //  lalanate
 //
-//  Created by Nathaniel Brion Sison on 12/12/20.
+//  Created by Nathaniel Brion Sison on 12/11/20.
 //
 
 import Foundation
 import CoreData
 
-class MOSender: NSManagedObject, Codable {
+class Sender: NSManagedObject, Codable {
+  
+  @nonobjc
+  public class func fetchRequest() -> NSFetchRequest<Sender> {
+    return NSFetchRequest<Sender>(entityName: "Sender")
+  }
+  
+  // MARK: - Public Props
+  
+  @NSManaged public var phone: String
+  @NSManaged public var name: String
+  @NSManaged public var email: String
   
   // MARK: - Conformance to Decodable
   

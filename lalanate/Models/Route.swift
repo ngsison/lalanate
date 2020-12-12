@@ -1,14 +1,24 @@
 //
-//  MORoute.swift
+//  Route.swift
 //  lalanate
 //
-//  Created by Nathaniel Brion Sison on 12/12/20.
+//  Created by Nathaniel Brion Sison on 12/11/20.
 //
 
 import Foundation
 import CoreData
 
-class MORoute: NSManagedObject, Codable {
+class Route: NSManagedObject, Codable {
+  
+  @nonobjc
+  public class func fetchRequest() -> NSFetchRequest<Route> {
+    return NSFetchRequest<Route>(entityName: "Route")
+  }
+  
+  // MARK: - Public Props
+  
+  @NSManaged public var start: String
+  @NSManaged public var end: String
   
   // MARK: - Conformance to Decodable
   

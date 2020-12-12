@@ -8,8 +8,8 @@
 import Foundation
 
 protocol OfflineStorage {
-  func saveDeliveries(deliveries: [XDelivery])
-  func loadDeliveries() -> [XDelivery]?
+  func saveDeliveries(deliveries: [Delivery])
+  func loadDeliveries() -> [Delivery]?
 }
 
 struct LalaOfflineStorage: OfflineStorage {
@@ -19,11 +19,11 @@ struct LalaOfflineStorage: OfflineStorage {
   
   private let storage = UserDefaultsStorage.shared
   
-  func saveDeliveries(deliveries: [XDelivery]) {
+  func saveDeliveries(deliveries: [Delivery]) {
     storage.deliveries = deliveries
   }
   
-  func loadDeliveries() -> [XDelivery]? {
+  func loadDeliveries() -> [Delivery]? {
     return storage.deliveries
   }
 }

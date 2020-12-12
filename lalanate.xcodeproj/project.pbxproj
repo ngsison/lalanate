@@ -17,13 +17,10 @@
 		20397A24258401C7004DF210 /* OfflineStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A23258401C7004DF210 /* OfflineStorage.swift */; };
 		20397A2825840269004DF210 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A2725840269004DF210 /* UserDefaultsStorage.swift */; };
 		20397A2E25848BE3004DF210 /* lalanate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20397A2C25848BE3004DF210 /* lalanate.xcdatamodeld */; };
-		20397AA1258495FB004DF210 /* XDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979F52583BB44004DF210 /* XDelivery.swift */; };
-		20397AD725849927004DF210 /* XRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979F82583BC16004DF210 /* XRoute.swift */; };
-		20397AD925849929004DF210 /* XSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979FB2583BC1B004DF210 /* XSender.swift */; };
+		20397AA1258495FB004DF210 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979F52583BB44004DF210 /* Delivery.swift */; };
+		20397AD725849927004DF210 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979F82583BC16004DF210 /* Route.swift */; };
+		20397AD925849929004DF210 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979FB2583BC1B004DF210 /* Sender.swift */; };
 		20397ADE25849A36004DF210 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397ADD25849A36004DF210 /* CoreDataStack.swift */; };
-		20397B2B25850541004DF210 /* MOSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397B2A25850541004DF210 /* MOSender.swift */; };
-		20397B382585054B004DF210 /* MORoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397B372585054B004DF210 /* MORoute.swift */; };
-		20397B3B25850553004DF210 /* MODelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397B3A25850553004DF210 /* MODelivery.swift */; };
 		20397B3E25850694004DF210 /* CodingUserInfoKeyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397B3D25850694004DF210 /* CodingUserInfoKeyExtension.swift */; };
 		20397B4125850A76004DF210 /* DecoderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397B4025850A76004DF210 /* DecoderError.swift */; };
 		206F746C25836576003D485D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F746B25836576003D485D /* UIColorExtension.swift */; };
@@ -43,9 +40,9 @@
 
 /* Begin PBXFileReference section */
 		0384D2D10C65F298322D7926 /* Pods-lalanate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lalanate.release.xcconfig"; path = "Target Support Files/Pods-lalanate/Pods-lalanate.release.xcconfig"; sourceTree = "<group>"; };
-		203979F52583BB44004DF210 /* XDelivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDelivery.swift; sourceTree = "<group>"; };
-		203979F82583BC16004DF210 /* XRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XRoute.swift; sourceTree = "<group>"; };
-		203979FB2583BC1B004DF210 /* XSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSender.swift; sourceTree = "<group>"; };
+		203979F52583BB44004DF210 /* Delivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
+		203979F82583BC16004DF210 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		203979FB2583BC1B004DF210 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
 		203979FF2583BE06004DF210 /* DeliveriesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesVM.swift; sourceTree = "<group>"; };
 		20397A022583C68A004DF210 /* LalaPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LalaPrint.swift; sourceTree = "<group>"; };
 		20397A102583EDCE004DF210 /* getDeliveriesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getDeliveriesResponse.json; sourceTree = "<group>"; };
@@ -57,9 +54,6 @@
 		20397A2725840269004DF210 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		20397A2D25848BE3004DF210 /* lalanate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lalanate.xcdatamodel; sourceTree = "<group>"; };
 		20397ADD25849A36004DF210 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		20397B2A25850541004DF210 /* MOSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOSender.swift; sourceTree = "<group>"; };
-		20397B372585054B004DF210 /* MORoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MORoute.swift; sourceTree = "<group>"; };
-		20397B3A25850553004DF210 /* MODelivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MODelivery.swift; sourceTree = "<group>"; };
 		20397B3D25850694004DF210 /* CodingUserInfoKeyExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKeyExtension.swift; sourceTree = "<group>"; };
 		20397B4025850A76004DF210 /* DecoderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderError.swift; sourceTree = "<group>"; };
 		206F746B25836576003D485D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -95,9 +89,9 @@
 		203979ED2583B9D4004DF210 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				203979F52583BB44004DF210 /* XDelivery.swift */,
-				203979F82583BC16004DF210 /* XRoute.swift */,
-				203979FB2583BC1B004DF210 /* XSender.swift */,
+				203979FB2583BC1B004DF210 /* Sender.swift */,
+				203979F82583BC16004DF210 /* Route.swift */,
+				203979F52583BB44004DF210 /* Delivery.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,7 +128,6 @@
 		20397A3025848BE9004DF210 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				20397ADB25849973004DF210 /* ManagedObjects */,
 				20397ADD25849A36004DF210 /* CoreDataStack.swift */,
 				20397B3D25850694004DF210 /* CodingUserInfoKeyExtension.swift */,
 				20397B4025850A76004DF210 /* DecoderError.swift */,
@@ -148,16 +141,6 @@
 				20397A2725840269004DF210 /* UserDefaultsStorage.swift */,
 			);
 			path = UserDefaults;
-			sourceTree = "<group>";
-		};
-		20397ADB25849973004DF210 /* ManagedObjects */ = {
-			isa = PBXGroup;
-			children = (
-				20397B2A25850541004DF210 /* MOSender.swift */,
-				20397B372585054B004DF210 /* MORoute.swift */,
-				20397B3A25850553004DF210 /* MODelivery.swift */,
-			);
-			path = ManagedObjects;
 			sourceTree = "<group>";
 		};
 		206F746925836567003D485D /* Utilities */ = {
@@ -407,7 +390,6 @@
 				20397A2E25848BE3004DF210 /* lalanate.xcdatamodeld in Sources */,
 				20DA43C625827EE800971474 /* DeliveryDetailsVC.swift in Sources */,
 				206F746C25836576003D485D /* UIColorExtension.swift in Sources */,
-				20397B2B25850541004DF210 /* MOSender.swift in Sources */,
 				206F74972583B200003D485D /* Constants.swift in Sources */,
 				20397B4125850A76004DF210 /* DecoderError.swift in Sources */,
 				20397A2825840269004DF210 /* UserDefaultsStorage.swift in Sources */,
@@ -417,17 +399,15 @@
 				20397A1A2583FE0D004DF210 /* AnyOptional.swift in Sources */,
 				20397A152583EE75004DF210 /* JSONFileReader.swift in Sources */,
 				20397A032583C68A004DF210 /* LalaPrint.swift in Sources */,
-				20397B382585054B004DF210 /* MORoute.swift in Sources */,
 				20397A1D2583FE30004DF210 /* UserDefaultsItem.swift in Sources */,
 				20397A202583FEAF004DF210 /* UserDefaultsObject.swift in Sources */,
 				20397A002583BE06004DF210 /* DeliveriesVM.swift in Sources */,
-				20397B3B25850553004DF210 /* MODelivery.swift in Sources */,
 				20DA438C2582459700971474 /* AppDelegate.swift in Sources */,
 				20397ADE25849A36004DF210 /* CoreDataStack.swift in Sources */,
-				20397AD925849929004DF210 /* XSender.swift in Sources */,
+				20397AD925849929004DF210 /* Sender.swift in Sources */,
 				20397A24258401C7004DF210 /* OfflineStorage.swift in Sources */,
-				20397AA1258495FB004DF210 /* XDelivery.swift in Sources */,
-				20397AD725849927004DF210 /* XRoute.swift in Sources */,
+				20397AA1258495FB004DF210 /* Delivery.swift in Sources */,
+				20397AD725849927004DF210 /* Route.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

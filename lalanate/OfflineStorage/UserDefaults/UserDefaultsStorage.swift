@@ -13,5 +13,5 @@ class UserDefaultsStorage {
   private init() {}
   
   @UserDefaultsObject(key: "deliveries")
-  public var deliveries: [XDelivery]?
+  public var deliveries: [Delivery]?
 }

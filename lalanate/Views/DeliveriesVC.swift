@@ -132,7 +132,7 @@ extension DeliveriesVC: UITableViewDelegate {
 
 extension DeliveriesVC: DeliveryDetailsDelegate {
   
-  func deliveryDetails(_ deliveryDetailsVC: DeliveryDetailsVC, didToggleFavoriteFor delivery: XDelivery) {
+  func deliveryDetails(_ deliveryDetailsVC: DeliveryDetailsVC, didToggleFavoriteFor delivery: Delivery) {
     
     vm.toggleFavorite(for: delivery)
     deliveryDetailsVC.navigationController?.popViewController(animated: true)
