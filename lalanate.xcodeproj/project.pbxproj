@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		203979F62583BB44004DF210 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979F52583BB44004DF210 /* Delivery.swift */; };
-		203979F92583BC16004DF210 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979F82583BC16004DF210 /* Route.swift */; };
-		203979FC2583BC1B004DF210 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979FB2583BC1B004DF210 /* Sender.swift */; };
 		20397A002583BE06004DF210 /* DeliveriesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979FF2583BE06004DF210 /* DeliveriesVM.swift */; };
 		20397A032583C68A004DF210 /* LalaPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A022583C68A004DF210 /* LalaPrint.swift */; };
 		20397A112583EDCE004DF210 /* getDeliveriesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 20397A102583EDCE004DF210 /* getDeliveriesResponse.json */; };
@@ -19,6 +16,14 @@
 		20397A202583FEAF004DF210 /* UserDefaultsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A1F2583FEAF004DF210 /* UserDefaultsObject.swift */; };
 		20397A24258401C7004DF210 /* OfflineStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A23258401C7004DF210 /* OfflineStorage.swift */; };
 		20397A2825840269004DF210 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A2725840269004DF210 /* UserDefaultsStorage.swift */; };
+		20397A2E25848BE3004DF210 /* lalanate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20397A2C25848BE3004DF210 /* lalanate.xcdatamodeld */; };
+		20397AA1258495FB004DF210 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979F52583BB44004DF210 /* Delivery.swift */; };
+		20397AAA258496F7004DF210 /* MORoute+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397AA4258496F7004DF210 /* MORoute+CoreDataClass.swift */; };
+		20397AAE258496F7004DF210 /* MOSender+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397AA8258496F7004DF210 /* MOSender+CoreDataClass.swift */; };
+		20397AC92584988C004DF210 /* MODelivery+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397AC72584988C004DF210 /* MODelivery+CoreDataClass.swift */; };
+		20397AD725849927004DF210 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979F82583BC16004DF210 /* Route.swift */; };
+		20397AD925849929004DF210 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979FB2583BC1B004DF210 /* Sender.swift */; };
+		20397ADE25849A36004DF210 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397ADD25849A36004DF210 /* CoreDataStack.swift */; };
 		206F746C25836576003D485D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F746B25836576003D485D /* UIColorExtension.swift */; };
 		206F747725836FED003D485D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F747625836FED003D485D /* UIViewExtension.swift */; };
 		206F748A2583ADFE003D485D /* LalaHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F74892583ADFE003D485D /* LalaHttpClient.swift */; };
@@ -48,6 +53,11 @@
 		20397A1F2583FEAF004DF210 /* UserDefaultsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsObject.swift; sourceTree = "<group>"; };
 		20397A23258401C7004DF210 /* OfflineStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineStorage.swift; sourceTree = "<group>"; };
 		20397A2725840269004DF210 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
+		20397A2D25848BE3004DF210 /* lalanate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lalanate.xcdatamodel; sourceTree = "<group>"; };
+		20397AA4258496F7004DF210 /* MORoute+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MORoute+CoreDataClass.swift"; sourceTree = "<group>"; };
+		20397AA8258496F7004DF210 /* MOSender+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOSender+CoreDataClass.swift"; sourceTree = "<group>"; };
+		20397AC72584988C004DF210 /* MODelivery+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MODelivery+CoreDataClass.swift"; sourceTree = "<group>"; };
+		20397ADD25849A36004DF210 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		206F746B25836576003D485D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		206F747625836FED003D485D /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		206F74892583ADFE003D485D /* LalaHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LalaHttpClient.swift; sourceTree = "<group>"; };
@@ -109,10 +119,39 @@
 		20397A22258401AD004DF210 /* OfflineStorage */ = {
 			isa = PBXGroup;
 			children = (
+				20397A3025848BE9004DF210 /* CoreData */,
+				20397A3125848BEF004DF210 /* UserDefaults */,
 				20397A23258401C7004DF210 /* OfflineStorage.swift */,
-				20397A2725840269004DF210 /* UserDefaultsStorage.swift */,
+				20397A2C25848BE3004DF210 /* lalanate.xcdatamodeld */,
 			);
 			path = OfflineStorage;
+			sourceTree = "<group>";
+		};
+		20397A3025848BE9004DF210 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				20397ADB25849973004DF210 /* ManagedObjects */,
+				20397ADD25849A36004DF210 /* CoreDataStack.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		20397A3125848BEF004DF210 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				20397A2725840269004DF210 /* UserDefaultsStorage.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		20397ADB25849973004DF210 /* ManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				20397AC72584988C004DF210 /* MODelivery+CoreDataClass.swift */,
+				20397AA4258496F7004DF210 /* MORoute+CoreDataClass.swift */,
+				20397AA8258496F7004DF210 /* MOSender+CoreDataClass.swift */,
+			);
+			path = ManagedObjects;
 			sourceTree = "<group>";
 		};
 		206F746925836567003D485D /* Utilities */ = {
@@ -356,13 +395,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				206F74932583B190003D485D /* DeliveriesAPI.swift in Sources */,
-				203979F62583BB44004DF210 /* Delivery.swift in Sources */,
 				206F747725836FED003D485D /* UIViewExtension.swift in Sources */,
-				203979F92583BC16004DF210 /* Route.swift in Sources */,
 				20DA43C32582757A00971474 /* DeliveryCell.swift in Sources */,
+				20397A2E25848BE3004DF210 /* lalanate.xcdatamodeld in Sources */,
 				20DA43C625827EE800971474 /* DeliveryDetailsVC.swift in Sources */,
+				20397AAE258496F7004DF210 /* MOSender+CoreDataClass.swift in Sources */,
 				206F746C25836576003D485D /* UIColorExtension.swift in Sources */,
-				203979FC2583BC1B004DF210 /* Sender.swift in Sources */,
 				206F74972583B200003D485D /* Constants.swift in Sources */,
 				20397A2825840269004DF210 /* UserDefaultsStorage.swift in Sources */,
 				206F748A2583ADFE003D485D /* LalaHttpClient.swift in Sources */,
@@ -375,7 +413,13 @@
 				20397A202583FEAF004DF210 /* UserDefaultsObject.swift in Sources */,
 				20397A002583BE06004DF210 /* DeliveriesVM.swift in Sources */,
 				20DA438C2582459700971474 /* AppDelegate.swift in Sources */,
+				20397ADE25849A36004DF210 /* CoreDataStack.swift in Sources */,
+				20397AD925849929004DF210 /* Sender.swift in Sources */,
 				20397A24258401C7004DF210 /* OfflineStorage.swift in Sources */,
+				20397AA1258495FB004DF210 /* Delivery.swift in Sources */,
+				20397AD725849927004DF210 /* Route.swift in Sources */,
+				20397AAA258496F7004DF210 /* MORoute+CoreDataClass.swift in Sources */,
+				20397AC92584988C004DF210 /* MODelivery+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +617,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		20397A2C25848BE3004DF210 /* lalanate.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				20397A2D25848BE3004DF210 /* lalanate.xcdatamodel */,
+			);
+			currentVersion = 20397A2D25848BE3004DF210 /* lalanate.xcdatamodel */;
+			path = lalanate.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 20DA43802582459700971474 /* Project object */;
 }

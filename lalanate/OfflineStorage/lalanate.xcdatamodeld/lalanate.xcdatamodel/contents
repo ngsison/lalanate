@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="20B29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MODelivery" representedClassName="MODelivery" syncable="YES" codeGenerationType="category">
+        <attribute name="deliveryFee" attributeType="String"/>
+        <attribute name="goodsPicture" attributeType="String"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="pickupTime" attributeType="String"/>
+        <attribute name="remarks" attributeType="String"/>
+        <attribute name="route" attributeType="Transformable" customClassName="MORoute"/>
+        <attribute name="sender" attributeType="Transformable" customClassName="MOSender"/>
+        <attribute name="surcharge" attributeType="String"/>
+    </entity>
+    <entity name="MORoute" representedClassName="MORoute" syncable="YES" codeGenerationType="category">
+        <attribute name="end" attributeType="String"/>
+        <attribute name="start" attributeType="String"/>
+    </entity>
+    <entity name="MOSender" representedClassName="MOSender" syncable="YES" codeGenerationType="category">
+        <attribute name="email" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="phone" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="MODelivery" positionX="-63" positionY="-18" width="128" height="149"/>
+        <element name="MOSender" positionX="-54" positionY="-9" width="128" height="74"/>
+        <element name="MORoute" positionX="-36" positionY="27" width="128" height="59"/>
+    </elements>
+</model>
