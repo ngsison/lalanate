@@ -13,7 +13,7 @@ class DeliveriesVM: BaseVM {
   // MARK: - Public Props
   
   public var getDeliveriesSuccess = BehaviorRelay<Bool>(value: false)
-  public var deliveries = LalaOfflineStorage.shared.loadDeliveries() ?? [Delivery]()
+  public var deliveries = LalaUserDefaultsStorage.shared.loadDeliveries() ?? [Delivery]()
   
   // MARK: - Private Props
   
@@ -33,7 +33,7 @@ class DeliveriesVM: BaseVM {
       return oldDelivery
     })
     
-    LalaOfflineStorage.shared.saveDeliveries(deliveries: deliveries)
+    LalaUserDefaultsStorage.shared.saveDeliveries(deliveries: deliveries)
     getDeliveriesSuccess.accept(true)
   }
   
@@ -62,7 +62,7 @@ class DeliveriesVM: BaseVM {
       self.deliveries.append(contentsOf: deliveries)
       self.toggleIsBusy(to: false)
       
-      LalaOfflineStorage.shared.saveDeliveries(deliveries: self.deliveries)
+      LalaUserDefaultsStorage.shared.saveDeliveries(deliveries: self.deliveries)
       self.getDeliveriesSuccess.accept(true)
     },
     onError: { error in

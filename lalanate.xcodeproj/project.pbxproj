@@ -15,7 +15,7 @@
 		20397A1D2583FE30004DF210 /* UserDefaultsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A1C2583FE30004DF210 /* UserDefaultsItem.swift */; };
 		20397A202583FEAF004DF210 /* UserDefaultsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A1F2583FEAF004DF210 /* UserDefaultsObject.swift */; };
 		20397A24258401C7004DF210 /* OfflineStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A23258401C7004DF210 /* OfflineStorage.swift */; };
-		20397A2825840269004DF210 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A2725840269004DF210 /* UserDefaultsStorage.swift */; };
+		20397A2825840269004DF210 /* UserDefaultsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A2725840269004DF210 /* UserDefaultsData.swift */; };
 		20397A2E25848BE3004DF210 /* lalanate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20397A2C25848BE3004DF210 /* lalanate.xcdatamodeld */; };
 		20397AA1258495FB004DF210 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979F52583BB44004DF210 /* Delivery.swift */; };
 		20397AD725849927004DF210 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979F82583BC16004DF210 /* Route.swift */; };
@@ -51,7 +51,7 @@
 		20397A1C2583FE30004DF210 /* UserDefaultsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsItem.swift; sourceTree = "<group>"; };
 		20397A1F2583FEAF004DF210 /* UserDefaultsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsObject.swift; sourceTree = "<group>"; };
 		20397A23258401C7004DF210 /* OfflineStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineStorage.swift; sourceTree = "<group>"; };
-		20397A2725840269004DF210 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
+		20397A2725840269004DF210 /* UserDefaultsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsData.swift; sourceTree = "<group>"; };
 		20397A2D25848BE3004DF210 /* lalanate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lalanate.xcdatamodel; sourceTree = "<group>"; };
 		20397ADD25849A36004DF210 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		20397B3D25850694004DF210 /* CodingUserInfoKeyExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKeyExtension.swift; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 		20397A3125848BEF004DF210 /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
-				20397A2725840269004DF210 /* UserDefaultsStorage.swift */,
+				20397A2725840269004DF210 /* UserDefaultsData.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -392,7 +392,7 @@
 				206F746C25836576003D485D /* UIColorExtension.swift in Sources */,
 				206F74972583B200003D485D /* Constants.swift in Sources */,
 				20397B4125850A76004DF210 /* DecoderError.swift in Sources */,
-				20397A2825840269004DF210 /* UserDefaultsStorage.swift in Sources */,
+				20397A2825840269004DF210 /* UserDefaultsData.swift in Sources */,
 				206F748A2583ADFE003D485D /* LalaHttpClient.swift in Sources */,
 				206F748E2583B03B003D485D /* BaseVM.swift in Sources */,
 				20DA43B5258270C100971474 /* DeliveriesVC.swift in Sources */,
