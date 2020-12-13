@@ -13,8 +13,7 @@ class DeliveriesVM: BaseVM {
   // MARK: - Public Props
   
   public var getDeliveriesSuccess = BehaviorRelay<Bool>(value: false)
-//  public var deliveries = LalaUserDefaultsStorage.shared.loadDeliveries() ?? [Delivery]()
-  public var deliveries = LalaCoreDataStorage.shared.loadDeliveries() ?? [Delivery]()
+  public var deliveries: [Delivery]
   
   // MARK: - Private Props
   
@@ -23,6 +22,13 @@ class DeliveriesVM: BaseVM {
   
 //  private let dataStore: DataStorageType = LalaUserDefaultsStorage.shared
   private let dataStore: DataStorageType = LalaCoreDataStorage.shared
+  
+  // MARK: - Lifecycle Events
+  
+  override init() {
+    self.deliveries = dataStore.loadDeliveries() ?? [Delivery]()
+    super.init()
+  }
   
   // MARK: - Public Methods
   
