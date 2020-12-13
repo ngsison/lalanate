@@ -8,47 +8,27 @@
 import Foundation
 import CoreData
 
-@objc(Route)
-class Route: NSManagedObject, Codable {
+class Route: NSObject, NSCoding, Codable {
   
-  @nonobjc
-  public class func fetchRequest() -> NSFetchRequest<Route> {
-    return NSFetchRequest<Route>(entityName: "Route")
-  }
+  public var start: String
+  public var end: String
   
-  // MARK: - Public Props
+  // MARK: - Conformance to NSCoding
   
-  @NSManaged public var start: String
-  @NSManaged public var end: String
-  
-  // MARK: - Conformance to Decodable
-  
-  enum CodingKeys: CodingKey {
-    case start
-    case end
-  }
-  
-  required convenience init(from decoder: Decoder) throws {
+  func encode(with coder: NSCoder) {
+    coder.encode(start, forKey: "start")
+    coder.encode(end, forKey: "end")
     
-    guard let context = decoder.userInfo[CodingUserInfoKey.managedObjectContext] as? NSManagedObjectContext else {
-      throw DecoderError.missingManagedObjectContext
+  }
+  
+  required init?(coder: NSCoder) {
+    
+    guard let start = coder.decodeObject(forKey: "start") as? String,
+          let end = coder.decodeObject(forKey: "end") as? String else {
+      return nil
     }
     
-    self.init(context: context)
-    
-    let container = try decoder.container(keyedBy: CodingKeys.self)
-    
-    self.start = try container.decode(String.self, forKey: .start)
-    self.end = try container.decode(String.self, forKey: .end)
-  }
-  
-  // MARK: - Conformance to Encodable
-  
-  func encode(to encoder: Encoder) throws {
-    
-    var container = encoder.container(keyedBy: CodingKeys.self)
-    
-    try container.encode(start, forKey: .start)
-    try container.encode(end, forKey: .end)
+    self.start = start
+    self.end = end
   }
 }

@@ -44,11 +44,12 @@ class Delivery: NSManagedObject, Codable {
   
   required convenience init(from decoder: Decoder) throws {
     
-    guard let context = decoder.userInfo[CodingUserInfoKey.managedObjectContext] as? NSManagedObjectContext else {
+    guard let context = decoder.userInfo[CodingUserInfoKey.managedObjectContext] as? NSManagedObjectContext,
+          let entity = NSEntityDescription.entity(forEntityName: "Delivery", in: context) else {
       throw DecoderError.missingManagedObjectContext
     }
     
-    self.init(context: context)
+    self.init(entity: entity, insertInto: context)
     
     let container = try decoder.container(keyedBy: CodingKeys.self)
     

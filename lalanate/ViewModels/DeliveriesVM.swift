@@ -13,15 +13,16 @@ class DeliveriesVM: BaseVM {
   // MARK: - Public Props
   
   public var getDeliveriesSuccess = BehaviorRelay<Bool>(value: false)
-  public var deliveries = LalaUserDefaultsStorage.shared.loadDeliveries() ?? [Delivery]()
+//  public var deliveries = LalaUserDefaultsStorage.shared.loadDeliveries() ?? [Delivery]()
+  public var deliveries = LalaCoreDataStorage.shared.loadDeliveries() ?? [Delivery]()
   
   // MARK: - Private Props
   
   private let totalPages = 5
   private let itemPerPage = 10
   
-//  private let dataStore: DataStorageType = LalaCoreDataStorage.shared
-  private let dataStore: DataStorageType = LalaUserDefaultsStorage.shared
+//  private let dataStore: DataStorageType = LalaUserDefaultsStorage.shared
+  private let dataStore: DataStorageType = LalaCoreDataStorage.shared
   
   // MARK: - Public Methods
   

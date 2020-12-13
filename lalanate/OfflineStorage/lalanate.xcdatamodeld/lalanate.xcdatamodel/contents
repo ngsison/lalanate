@@ -4,30 +4,14 @@
         <attribute name="deliveryFee" attributeType="String"/>
         <attribute name="goodsPicture" attributeType="String"/>
         <attribute name="id" attributeType="String"/>
-        <attribute name="isFavorite" transient="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isFavorite" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="pickupTime" attributeType="String"/>
         <attribute name="remarks" attributeType="String"/>
-        <attribute name="route" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="Route"/>
-        <attribute name="sender" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="Sender"/>
+        <attribute name="route" attributeType="Transformable" valueTransformerName="" customClassName="Route"/>
+        <attribute name="sender" attributeType="Transformable" valueTransformerName="" customClassName="Sender"/>
         <attribute name="surcharge" attributeType="String"/>
-        <uniquenessConstraints>
-            <uniquenessConstraint>
-                <constraint value="id"/>
-            </uniquenessConstraint>
-        </uniquenessConstraints>
-    </entity>
-    <entity name="Route" representedClassName="Route" syncable="YES">
-        <attribute name="end" attributeType="String"/>
-        <attribute name="start" attributeType="String"/>
-    </entity>
-    <entity name="Sender" representedClassName="Sender" syncable="YES">
-        <attribute name="email" attributeType="String"/>
-        <attribute name="name" attributeType="String"/>
-        <attribute name="phone" attributeType="String"/>
     </entity>
     <elements>
         <element name="Delivery" positionX="-63" positionY="-18" width="128" height="164"/>
-        <element name="Sender" positionX="-54" positionY="-9" width="128" height="74"/>
-        <element name="Route" positionX="-36" positionY="27" width="128" height="59"/>
     </elements>
 </model>

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 protocol DataStorageType {
   func saveDeliveries(deliveries: [Delivery])
@@ -33,11 +34,20 @@ struct LalaCoreDataStorage: DataStorageType {
   static let shared = LalaCoreDataStorage()
   private init() {}
   
+  private let persistentContainer = CoreDataStack.shared.persistentContainer
+  
   func saveDeliveries(deliveries: [Delivery]) {
     
+    CoreDataStack.shared.saveContext()
   }
   
   func loadDeliveries() -> [Delivery]? {
-    return nil
+    
+    do {
+      return try persistentContainer.viewContext.fetch(Delivery.fetchRequest())
+    } catch {
+      print("fetchRequest failed with error: \(error)")
+      return nil
+    }
   }
 }
