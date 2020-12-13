@@ -8,7 +8,10 @@
 import Foundation
 
 /**
- Custom printer.
+ Prints information about the `file`, `line` and `function` of where the log originates.
+ 
+ - Used to easily filter developer logs from system or external library logs.
+ - Type 🔥 in logs filter to see all developer logs.
  */
 
 func print(filePath: String = #file, line: Int = #line, function: String = #function, _ message: String) {
