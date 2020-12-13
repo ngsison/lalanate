@@ -165,6 +165,11 @@ class DeliveryDetailsVC: UIViewController {
     populateDeliveryDetails()
   }
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    updateScrollViewContentSize()
+  }
+  
   // MARK: - Events
   
   @objc
@@ -173,6 +178,16 @@ class DeliveryDetailsVC: UIViewController {
   }
   
   // MARK: - Private Methods
+  
+  private func updateScrollViewContentSize() {
+    
+    let contentRect: CGRect = contentView.subviews
+      .reduce(into: .zero) { rect, view in
+        rect = rect.union(view.frame)
+      }
+    
+    scrollView.contentSize = contentRect.size
+  }
   
   private func populateDeliveryDetails() {
     
@@ -247,7 +262,7 @@ class DeliveryDetailsVC: UIViewController {
     contentView.addSubview(fromToContainerView)
     fromToContainerView.snp.makeConstraints { (make) in
       make.top.equalToSuperview().offset(20)
-      make.left.right.equalToSuperview().inset(20)
+      make.left.right.equalToSuperview().inset(10)
       make.height.equalTo(100)
     }
     
@@ -255,23 +270,24 @@ class DeliveryDetailsVC: UIViewController {
      Goods to deliver
      */
     
-    goodsContainerView.addSubview(goodsLabel)
+    contentView.addSubview(goodsLabel)
     goodsLabel.snp.makeConstraints { (make) in
-      make.top.left.right.equalToSuperview().inset(10)
+      make.top.equalTo(fromToContainerView.snp.bottom).offset(20)
+      make.left.right.equalToSuperview().inset(20)
     }
     
-    goodsContainerView.addSubview(goodsImageView)
+    contentView.addSubview(goodsImageView)
     goodsImageView.snp.makeConstraints { (make) in
       make.top.equalTo(goodsLabel.snp.bottom).offset(10)
-      make.left.bottom.equalToSuperview().inset(10)
-      make.width.equalTo(220)
+      make.left.right.equalToSuperview().inset(20)
+      make.height.equalTo(goodsImageView.snp.width)
     }
     
     contentView.addSubview(goodsContainerView)
     goodsContainerView.snp.makeConstraints { (make) in
-      make.top.equalTo(fromToContainerView.snp.bottom).offset(20)
-      make.left.right.equalToSuperview().inset(20)
-      make.height.equalTo(250)
+      make.top.equalTo(goodsLabel.snp.top).offset(-10)
+      make.left.right.equalToSuperview().inset(10)
+      make.bottom.equalTo(goodsImageView.snp.bottom).offset(10)
     }
     
     /*
@@ -294,7 +310,7 @@ class DeliveryDetailsVC: UIViewController {
     contentView.addSubview(deliveryFeeContainerView)
     deliveryFeeContainerView.snp.makeConstraints { (make) in
       make.top.equalTo(goodsContainerView.snp.bottom).offset(20)
-      make.left.right.equalToSuperview().inset(20)
+      make.left.right.equalToSuperview().inset(10)
       make.height.equalTo(70)
     }
     
@@ -304,9 +320,7 @@ class DeliveryDetailsVC: UIViewController {
     
     scrollView.addSubview(contentView)
     contentView.snp.makeConstraints { (make) in
-      make.edges.equalToSuperview()
-      make.width.equalToSuperview()
-      make.height.equalTo(500)
+      make.edges.width.height.equalToSuperview()
     }
     
     view.addSubview(scrollView)
