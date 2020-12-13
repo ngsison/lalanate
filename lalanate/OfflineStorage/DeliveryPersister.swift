@@ -12,4 +12,5 @@
 protocol DeliveryPersister {
   func saveDeliveries(deliveries: [Delivery])
   func loadDeliveries() -> [Delivery]?
+  func removeAllDeliveries()
 }

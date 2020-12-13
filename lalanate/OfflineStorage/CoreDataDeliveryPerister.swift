@@ -14,13 +14,13 @@ import CoreData
 
 struct CoreDataDeliveryPerister: DeliveryPersister {
   
+  
   static let shared = CoreDataDeliveryPerister()
   private init() {}
   
   private let persistentContainer = CoreDataStack.shared.persistentContainer
   
   func saveDeliveries(deliveries: [Delivery]) {
-    
     CoreDataStack.shared.saveContext()
   }
   
@@ -29,8 +29,21 @@ struct CoreDataDeliveryPerister: DeliveryPersister {
     do {
       return try persistentContainer.viewContext.fetch(Delivery.fetchRequest())
     } catch {
-      print("fetchRequest failed with error: \(error)")
+      print("error: \(error.localizedDescription)")
       return nil
+    }
+  }
+  
+  func removeAllDeliveries() {
+    
+    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Delivery")
+    let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+    
+    do {
+      try persistentContainer.viewContext.execute(batchDeleteRequest)
+      print("success")
+    } catch let error {
+      print("error: \(error.localizedDescription)")
     }
   }
 }

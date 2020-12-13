@@ -25,4 +25,8 @@ struct UserDefaultsDeliveryPersister: DeliveryPersister {
   func loadDeliveries() -> [Delivery]? {
     return storage.deliveries
   }
+  
+  func removeAllDeliveries() {
+    storage.deliveries = nil
+  }
 }
