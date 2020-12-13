@@ -8,14 +8,16 @@
 import CoreData
 import Foundation
 
-class Route: NSObject, NSCoding, Codable {
+class Route: NSObject, NSSecureCoding, Codable {
   
   // MARK: - Public Props
   
   public var start: String
   public var end: String
   
-  // MARK: - Conformance to NSCoding
+  // MARK: - Conformance to NSSecureCoding
+  
+  static var supportsSecureCoding: Bool = true
   
   func encode(with coder: NSCoder) {
     coder.encode(start, forKey: "start")

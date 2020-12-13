@@ -7,8 +7,8 @@
         <attribute name="isFavorite" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="pickupTime" attributeType="String"/>
         <attribute name="remarks" attributeType="String"/>
-        <attribute name="route" attributeType="Transformable" valueTransformerName="" customClassName="Route"/>
-        <attribute name="sender" attributeType="Transformable" valueTransformerName="" customClassName="Sender"/>
+        <attribute name="route" attributeType="Transformable" valueTransformerName="LalaValueTransformer" customClassName="Route"/>
+        <attribute name="sender" attributeType="Transformable" valueTransformerName="LalaValueTransformer" customClassName="Sender"/>
         <attribute name="surcharge" attributeType="String"/>
     </entity>
     <elements>

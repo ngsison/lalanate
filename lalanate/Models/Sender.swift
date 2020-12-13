@@ -8,7 +8,7 @@
 import CoreData
 import Foundation
 
-class Sender: NSObject, NSCoding, Codable {
+class Sender: NSObject, NSSecureCoding, Codable {
   
   // MARK: - Public Props
   
@@ -16,7 +16,9 @@ class Sender: NSObject, NSCoding, Codable {
   public var phone: String
   public var email: String
   
-  // MARK: - Conformance to NSCoding
+  // MARK: - Conformance to NSSecureCoding
+  
+  static var supportsSecureCoding: Bool = true
   
   func encode(with coder: NSCoder) {
     coder.encode(name, forKey: "name")
