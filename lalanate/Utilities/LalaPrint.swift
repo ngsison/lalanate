@@ -7,6 +7,10 @@
 
 import Foundation
 
+/**
+ Custom printer.
+ */
+
 func print(filePath: String = #file, line: Int = #line, function: String = #function, _ message: String) {
   
   let fileName = getFileName(filePath)

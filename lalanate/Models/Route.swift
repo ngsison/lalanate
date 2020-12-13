@@ -10,6 +10,8 @@ import CoreData
 
 class Route: NSObject, NSCoding, Codable {
   
+  // MARK: - Public Props
+  
   public var start: String
   public var end: String
   

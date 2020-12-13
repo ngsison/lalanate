@@ -7,6 +7,10 @@
 
 import Foundation
 
+/**
+ Implementation of `UserDefaultsItem` for types that conform to Codable.
+ */
+
 @propertyWrapper
 struct UserDefaultsObject<T> where T: Codable {
   
@@ -15,13 +19,15 @@ struct UserDefaultsObject<T> where T: Codable {
   public var storage: UserDefaults = .standard
   
   public var wrappedValue: T {
+    
     get {
       guard let data = storage.data(forKey: key),
-            let object = try? CoreDataStack.decoder.decode(T.self, from: data) else {
+            let object = try? CoreDataStack.shared.decoder.decode(T.self, from: data) else {
         return defaultValue
       }
       return object
     }
+    
     set {
       if let optional = newValue as? AnyOptional, optional.isNil {
         storage.removeObject(forKey: key)

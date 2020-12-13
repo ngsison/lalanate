@@ -8,7 +8,7 @@
 import Foundation
 
 @objc
-fileprivate class DummyClass: NSObject { }
+fileprivate class TestClass: NSObject {}
 
 struct JSONFileReader {
   
@@ -16,7 +16,7 @@ struct JSONFileReader {
     
     var data: Data?
     
-    let bundle = Bundle(for: DummyClass.self)
+    let bundle = Bundle(for: TestClass.self)
     
     if let path = bundle.path(forResource: filename, ofType: "json") {
       let url = URL(fileURLWithPath: path)

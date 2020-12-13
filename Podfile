@@ -13,7 +13,7 @@ target 'lalanate' do
   pod 'SnapKit', '5.0.1'
   pod 'Kingfisher', '5.15.7'
   
-  # Network
+  # Networking
   pod 'Moya/RxSwift', '14.0.0'
   
   # Rx

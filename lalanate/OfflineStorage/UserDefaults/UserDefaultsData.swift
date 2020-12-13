@@ -7,6 +7,10 @@
 
 import Foundation
 
+/**
+ Singleton that holds the data to be stored in and retrieved from UserDefaults
+ */
+
 class UserDefaultsData {
   
   static let shared = UserDefaultsData()

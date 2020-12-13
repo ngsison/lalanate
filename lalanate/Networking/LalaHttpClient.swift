@@ -68,6 +68,8 @@ public class LalaHttpClient {
   
   /**
    Fake MoyaProvider.
+   
+   - Note: Usage: htttpClient.provider = LalaHttpClient.fakeMoyaProvider()
    */
   
   public static func fakeMoyaProvider(statusCode: Int = 200,

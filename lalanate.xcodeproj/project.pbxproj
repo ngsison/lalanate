@@ -14,7 +14,6 @@
 		20397A1A2583FE0D004DF210 /* AnyOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A192583FE0D004DF210 /* AnyOptional.swift */; };
 		20397A1D2583FE30004DF210 /* UserDefaultsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A1C2583FE30004DF210 /* UserDefaultsItem.swift */; };
 		20397A202583FEAF004DF210 /* UserDefaultsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A1F2583FEAF004DF210 /* UserDefaultsObject.swift */; };
-		20397A24258401C7004DF210 /* OfflineStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A23258401C7004DF210 /* OfflineStorage.swift */; };
 		20397A2825840269004DF210 /* UserDefaultsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397A2725840269004DF210 /* UserDefaultsData.swift */; };
 		20397A2E25848BE3004DF210 /* lalanate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20397A2C25848BE3004DF210 /* lalanate.xcdatamodeld */; };
 		20397AA1258495FB004DF210 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203979F52583BB44004DF210 /* Delivery.swift */; };
@@ -23,6 +22,9 @@
 		20397ADE25849A36004DF210 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397ADD25849A36004DF210 /* CoreDataStack.swift */; };
 		20397B3E25850694004DF210 /* CodingUserInfoKeyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397B3D25850694004DF210 /* CodingUserInfoKeyExtension.swift */; };
 		20397B4125850A76004DF210 /* DecoderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397B4025850A76004DF210 /* DecoderError.swift */; };
+		20397B8F25861F12004DF210 /* DeliveryPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397B8E25861F12004DF210 /* DeliveryPersister.swift */; };
+		20397B95258620D1004DF210 /* UserDefaultsDeliveryPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397B94258620D1004DF210 /* UserDefaultsDeliveryPersister.swift */; };
+		20397B99258620EE004DF210 /* CoreDataDeliveryPerister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20397B98258620EE004DF210 /* CoreDataDeliveryPerister.swift */; };
 		206F746C25836576003D485D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F746B25836576003D485D /* UIColorExtension.swift */; };
 		206F747725836FED003D485D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F747625836FED003D485D /* UIViewExtension.swift */; };
 		206F748A2583ADFE003D485D /* LalaHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F74892583ADFE003D485D /* LalaHttpClient.swift */; };
@@ -50,12 +52,14 @@
 		20397A192583FE0D004DF210 /* AnyOptional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyOptional.swift; sourceTree = "<group>"; };
 		20397A1C2583FE30004DF210 /* UserDefaultsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsItem.swift; sourceTree = "<group>"; };
 		20397A1F2583FEAF004DF210 /* UserDefaultsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsObject.swift; sourceTree = "<group>"; };
-		20397A23258401C7004DF210 /* OfflineStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineStorage.swift; sourceTree = "<group>"; };
 		20397A2725840269004DF210 /* UserDefaultsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsData.swift; sourceTree = "<group>"; };
 		20397A2D25848BE3004DF210 /* lalanate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lalanate.xcdatamodel; sourceTree = "<group>"; };
 		20397ADD25849A36004DF210 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		20397B3D25850694004DF210 /* CodingUserInfoKeyExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKeyExtension.swift; sourceTree = "<group>"; };
 		20397B4025850A76004DF210 /* DecoderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderError.swift; sourceTree = "<group>"; };
+		20397B8E25861F12004DF210 /* DeliveryPersister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryPersister.swift; sourceTree = "<group>"; };
+		20397B94258620D1004DF210 /* UserDefaultsDeliveryPersister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDeliveryPersister.swift; sourceTree = "<group>"; };
+		20397B98258620EE004DF210 /* CoreDataDeliveryPerister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDeliveryPerister.swift; sourceTree = "<group>"; };
 		206F746B25836576003D485D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		206F747625836FED003D485D /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		206F74892583ADFE003D485D /* LalaHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LalaHttpClient.swift; sourceTree = "<group>"; };
@@ -119,7 +123,9 @@
 			children = (
 				20397A3025848BE9004DF210 /* CoreData */,
 				20397A3125848BEF004DF210 /* UserDefaults */,
-				20397A23258401C7004DF210 /* OfflineStorage.swift */,
+				20397B8E25861F12004DF210 /* DeliveryPersister.swift */,
+				20397B98258620EE004DF210 /* CoreDataDeliveryPerister.swift */,
+				20397B94258620D1004DF210 /* UserDefaultsDeliveryPersister.swift */,
 				20397A2C25848BE3004DF210 /* lalanate.xcdatamodeld */,
 			);
 			path = OfflineStorage;
@@ -389,8 +395,10 @@
 				20DA43C32582757A00971474 /* DeliveryCell.swift in Sources */,
 				20397A2E25848BE3004DF210 /* lalanate.xcdatamodeld in Sources */,
 				20DA43C625827EE800971474 /* DeliveryDetailsVC.swift in Sources */,
+				20397B99258620EE004DF210 /* CoreDataDeliveryPerister.swift in Sources */,
 				206F746C25836576003D485D /* UIColorExtension.swift in Sources */,
 				206F74972583B200003D485D /* Constants.swift in Sources */,
+				20397B95258620D1004DF210 /* UserDefaultsDeliveryPersister.swift in Sources */,
 				20397B4125850A76004DF210 /* DecoderError.swift in Sources */,
 				20397A2825840269004DF210 /* UserDefaultsData.swift in Sources */,
 				206F748A2583ADFE003D485D /* LalaHttpClient.swift in Sources */,
@@ -400,12 +408,12 @@
 				20397A152583EE75004DF210 /* JSONFileReader.swift in Sources */,
 				20397A032583C68A004DF210 /* LalaPrint.swift in Sources */,
 				20397A1D2583FE30004DF210 /* UserDefaultsItem.swift in Sources */,
+				20397B8F25861F12004DF210 /* DeliveryPersister.swift in Sources */,
 				20397A202583FEAF004DF210 /* UserDefaultsObject.swift in Sources */,
 				20397A002583BE06004DF210 /* DeliveriesVM.swift in Sources */,
 				20DA438C2582459700971474 /* AppDelegate.swift in Sources */,
 				20397ADE25849A36004DF210 /* CoreDataStack.swift in Sources */,
 				20397AD925849929004DF210 /* Sender.swift in Sources */,
-				20397A24258401C7004DF210 /* OfflineStorage.swift in Sources */,
 				20397AA1258495FB004DF210 /* Delivery.swift in Sources */,
 				20397AD725849927004DF210 /* Route.swift in Sources */,
 			);

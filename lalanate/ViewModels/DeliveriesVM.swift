@@ -20,13 +20,13 @@ class DeliveriesVM: BaseVM {
   private let totalPages = 5
   private let itemPerPage = 10
   
-//  private let dataStore: DataStorageType = LalaUserDefaultsStorage.shared
-  private let dataStore: DataStorageType = LalaCoreDataStorage.shared
+  // Value can be replaced with `UserDefaultsDeliveryPersister.shared`
+  private let deliveryPersister: DeliveryPersister = CoreDataDeliveryPerister.shared
   
   // MARK: - Lifecycle Events
   
   override init() {
-    self.deliveries = dataStore.loadDeliveries() ?? [Delivery]()
+    self.deliveries = deliveryPersister.loadDeliveries() ?? [Delivery]()
     super.init()
   }
   
@@ -43,7 +43,7 @@ class DeliveriesVM: BaseVM {
       return oldDelivery
     })
     
-    dataStore.saveDeliveries(deliveries: deliveries)
+    deliveryPersister.saveDeliveries(deliveries: deliveries)
     getDeliveriesSuccess.accept(true)
   }
   
@@ -63,14 +63,14 @@ class DeliveriesVM: BaseVM {
     
     httpClient.request(target: target) { (response) -> [Delivery] in
       
-      return try CoreDataStack.decoder.decode([Delivery].self, from: response.data)
+      return try CoreDataStack.shared.decoder.decode([Delivery].self, from: response.data)
     }
     .subscribe(onNext: { deliveries in
       
       print("success")
       
       self.deliveries.append(contentsOf: deliveries)
-      self.dataStore.saveDeliveries(deliveries: self.deliveries)
+      self.deliveryPersister.saveDeliveries(deliveries: self.deliveries)
       
       self.toggleIsBusy(to: false)
       self.getDeliveriesSuccess.accept(true)

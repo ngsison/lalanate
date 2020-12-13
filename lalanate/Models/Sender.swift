@@ -10,6 +10,8 @@ import CoreData
 
 class Sender: NSObject, NSCoding, Codable {
   
+  // MARK: - Public Props
+  
   public var name: String
   public var phone: String
   public var email: String

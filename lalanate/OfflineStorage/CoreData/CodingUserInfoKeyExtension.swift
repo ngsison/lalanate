@@ -8,5 +8,10 @@
 import Foundation
 
 extension CodingUserInfoKey {
+  
+  /**
+   Used for accessing `NSManagedObjectContext` from a `JSONDecoder`.
+   */
+  
   static let managedObjectContext = CodingUserInfoKey(rawValue: "managedObjectContext")!
 }

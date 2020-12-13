@@ -12,5 +12,7 @@ protocol AnyOptional {
 }
 
 extension Optional: AnyOptional {
+  
+  /// Helper property to validate if a value of generic type is optional.
   var isNil: Bool { self == nil }
 }

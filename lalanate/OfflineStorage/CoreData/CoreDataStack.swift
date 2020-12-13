@@ -7,6 +7,10 @@
 
 import CoreData
 
+/**
+ Singleton that manages CoreData
+ */
+
 class CoreDataStack {
   
   static let shared = CoreDataStack()
@@ -14,7 +18,11 @@ class CoreDataStack {
   
   // MARK: - Core Data Decoder
   
-  static var decoder: JSONDecoder {
+  /**
+   Custom decoder for decoding a `Decodable` object that's also a subclass of `NSManagedObject`.
+   */
+  
+  public var decoder: JSONDecoder {
     let decoder = JSONDecoder()
     decoder.userInfo[CodingUserInfoKey.managedObjectContext] = CoreDataStack.shared.persistentContainer.viewContext
     return decoder
