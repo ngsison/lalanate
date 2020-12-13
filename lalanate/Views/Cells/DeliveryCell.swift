@@ -22,7 +22,7 @@ class DeliveryCell: UITableViewCell {
   
   private lazy var containerView: UIView = {
     let view = UIView()
-    view.backgroundColor = .lalaLightGray
+    view.backgroundColor = .lalaBGColor
     view.setCornerRadius(10)
     return view
   }()

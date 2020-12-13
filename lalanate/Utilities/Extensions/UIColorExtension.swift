@@ -9,8 +9,11 @@ import UIKit
 
 extension UIColor {
   
-  /// A color object with a white value of 0 and an alpha value of 0.1
-  static let lalaLightGray = UIColor.init(white: 0, alpha: 0.1)
+  /// A color object named `lalaBGColor`
+  static let lalaBGColor = UIColor(named: "lalaBGColor")
+  
+  /// A color object named `lalaButtonColor`
+  static let lalaButtonColor = UIColor(named: "lalaButtonColor")
   
   /**
    Creates a color object using the given hex string.

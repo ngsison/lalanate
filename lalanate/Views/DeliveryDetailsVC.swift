@@ -23,7 +23,6 @@ class DeliveryDetailsVC: UIViewController {
   private lazy var scrollView: UIScrollView = {
     let sv = UIScrollView()
     sv.alwaysBounceVertical = true
-    sv.backgroundColor = .white
     return sv
   }()
   
@@ -38,7 +37,7 @@ class DeliveryDetailsVC: UIViewController {
   
   private lazy var fromToContainerView: UIView = {
     let view = UIView()
-    view.backgroundColor = .lalaLightGray
+    view.backgroundColor = .lalaBGColor
     view.setCornerRadius(10)
     return view
   }()
@@ -79,7 +78,7 @@ class DeliveryDetailsVC: UIViewController {
   
   private lazy var goodsContainerView: UIView = {
     let view = UIView()
-    view.backgroundColor = .lalaLightGray
+    view.backgroundColor = .lalaBGColor
     view.setCornerRadius(10)
     return view
   }()
@@ -105,7 +104,7 @@ class DeliveryDetailsVC: UIViewController {
   
   private lazy var deliveryFeeContainerView: UIView = {
     let view = UIView()
-    view.backgroundColor = .lalaLightGray
+    view.backgroundColor = .lalaBGColor
     view.setCornerRadius(10)
     return view
   }()
@@ -134,7 +133,7 @@ class DeliveryDetailsVC: UIViewController {
     btn.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
     btn.setTitle("Add to Favorites", for: .normal)
     btn.setTitleColor(.white, for: .normal)
-    btn.backgroundColor = .orange
+    btn.backgroundColor = .lalaButtonColor
     btn.setCornerRadius(20)
     btn.addTarget(self, action: #selector(didTapFavorite), for: .touchUpInside)
     return btn
@@ -216,7 +215,12 @@ class DeliveryDetailsVC: UIViewController {
   private func setUpViews() {
     
     title = "Delivery Details"
-    view.backgroundColor = .white
+    
+    if #available(iOS 13.0, *) {
+      view.backgroundColor = .systemBackground
+    } else {
+      view.backgroundColor = .white
+    }
     
     /*
      Favorite
@@ -270,20 +274,21 @@ class DeliveryDetailsVC: UIViewController {
      Goods to deliver
      */
     
+    contentView.addSubview(goodsContainerView)
     contentView.addSubview(goodsLabel)
+    contentView.addSubview(goodsImageView)
+    
     goodsLabel.snp.makeConstraints { (make) in
       make.top.equalTo(fromToContainerView.snp.bottom).offset(20)
       make.left.right.equalToSuperview().inset(20)
     }
     
-    contentView.addSubview(goodsImageView)
     goodsImageView.snp.makeConstraints { (make) in
       make.top.equalTo(goodsLabel.snp.bottom).offset(10)
       make.left.right.equalToSuperview().inset(20)
       make.height.equalTo(goodsImageView.snp.width)
     }
     
-    contentView.addSubview(goodsContainerView)
     goodsContainerView.snp.makeConstraints { (make) in
       make.top.equalTo(goodsLabel.snp.top).offset(-10)
       make.left.right.equalToSuperview().inset(10)
