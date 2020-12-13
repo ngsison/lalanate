@@ -86,7 +86,7 @@ class DeliveryDetailsVC: UIViewController {
   private lazy var goodsLabel: UILabel = {
     let label = UILabel()
     label.text = "Goods to deliver"
-    label.font = .systemFont(ofSize: 20, weight: .medium)
+    label.font = .systemFont(ofSize: 16, weight: .medium)
     return label
   }()
   
