@@ -47,17 +47,21 @@ class DeliveriesVM: BaseVM {
     getDeliveriesSuccess.accept(true)
   }
   
-  public func getDeliveries() {
+  public func getDeliveries(offset: Int = 0) {
     
     guard !isBusy.value,
-          deliveries.count < totalPages * itemPerPage else {
+          offset < totalPages * itemPerPage else {
       return
     }
     
-    print("offset: \(deliveries.count)")
-    print("itemPerPage: \(itemPerPage)")
+    print("offset: \(offset)")
     
-    let target = DeliveriesAPI.getDeliveries(offset: deliveries.count, limit: itemPerPage)
+    if offset == 0 {
+      deliveries.removeAll()
+      getDeliveriesSuccess.accept(true)
+    }
+    
+    let target = DeliveriesAPI.getDeliveries(offset: offset, limit: itemPerPage)
     
     toggleIsBusy(to: true)
     

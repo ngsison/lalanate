@@ -23,6 +23,7 @@ class DeliveriesVC: UIViewController {
   
   private let vm = DeliveriesVM()
   private let disposeBag = DisposeBag()
+  private let refreshControl = UIRefreshControl()
   
   // MARK: - Lifecycle Events
   
@@ -38,13 +39,20 @@ class DeliveriesVC: UIViewController {
     }
   }
   
+  // MARK: - Events
+  
+  @objc
+  private func didRefresh() {
+    vm.getDeliveries()
+  }
+  
   // MARK: - Private Methods
   
   private func setUpRxSubscriptions() {
     
     vm.isBusy
       .subscribe(onNext: { isBusy in
-        print("isBusy: \(isBusy)")
+        isBusy ? self.refreshControl.beginRefreshing() : self.refreshControl.endRefreshing()
       }).disposed(by: disposeBag)
     
     vm.getDeliveriesSuccess
@@ -61,6 +69,9 @@ class DeliveriesVC: UIViewController {
   }
   
   private func setUpTableView() {
+    
+    refreshControl.addTarget(self, action: #selector(didRefresh), for: .valueChanged)
+    tableView.refreshControl = refreshControl
     
     tableView.dataSource = self
     tableView.delegate = self
@@ -123,7 +134,7 @@ extension DeliveriesVC: UITableViewDelegate {
     let contentMaxY = scrollView.contentSize.height - scrollView.contentOffset.y
     
     if contentMaxY < frameMaxY {
-      vm.getDeliveries()
+      vm.getDeliveries(offset: vm.deliveries.count)
     }
   }
 }
