@@ -6,59 +6,85 @@
 //
 
 import Foundation
+import CoreData
 
-// MARK: - Delivery
-
-public struct Delivery: Codable {
+@objc(Delivery)
+class Delivery: NSManagedObject, Codable {
+  
+  @nonobjc
+  public class func fetchRequest() -> NSFetchRequest<Delivery> {
+    return NSFetchRequest<Delivery>(entityName: "Delivery")
+  }
   
   // MARK: - Public Props
   
-  public var id: String
-  public var remarks: String
-  public var pickupTime: String
-  public var goodsPicture: String
-  public var deliveryFee: String
-  public var surcharge: String
-  public var route: Route
-  public var sender: Sender
+  @NSManaged public var id: String
+  @NSManaged public var remarks: String
+  @NSManaged public var pickupTime: String
+  @NSManaged public var goodsPicture: String
+  @NSManaged public var deliveryFee: String
+  @NSManaged public var surcharge: String
+  @NSManaged public var route: Route
+  @NSManaged public var sender: Sender
+  @NSManaged public var isFavorite: Bool
   
-  public var isFavorite = false
+  // MARK: - Conformance to Decodable
   
-  // MARK: - Coding Keys
-  
-  enum CodingKeys: String, CodingKey {
-    case id = "id"
-    case remarks = "remarks"
-    case pickupTime = "pickupTime"
-    case goodsPicture = "goodsPicture"
-    case deliveryFee = "deliveryFee"
-    case surcharge = "surcharge"
-    case route = "route"
-    case sender = "sender"
-    
-    case isFavorite = "isFavorite"
+  enum CodingKeys: CodingKey {
+    case id
+    case remarks
+    case pickupTime
+    case goodsPicture
+    case deliveryFee
+    case surcharge
+    case route
+    case sender
+    case isFavorite
   }
   
-  public init(from decoder: Decoder) throws {
+  required convenience init(from decoder: Decoder) throws {
+    
+    guard let context = decoder.userInfo[CodingUserInfoKey.managedObjectContext] as? NSManagedObjectContext,
+          let entity = NSEntityDescription.entity(forEntityName: "Delivery", in: context) else {
+      throw DecoderError.missingManagedObjectContext
+    }
+    
+    self.init(entity: entity, insertInto: context)
     
     let container = try decoder.container(keyedBy: CodingKeys.self)
     
-    self.id           = try container.decode(String.self, forKey: .id)
-    self.remarks      = try container.decode(String.self, forKey: .remarks)
-    self.pickupTime   = try container.decode(String.self, forKey: .pickupTime)
+    self.id = try container.decode(String.self, forKey: .id)
+    self.remarks = try container.decode(String.self, forKey: .remarks)
+    self.pickupTime = try container.decode(String.self, forKey: .pickupTime)
     self.goodsPicture = try container.decode(String.self, forKey: .goodsPicture)
-    self.deliveryFee  = try container.decode(String.self, forKey: .deliveryFee)
-    self.surcharge    = try container.decode(String.self, forKey: .surcharge)
-    self.route        = try container.decode(Route.self, forKey: .route)
-    self.sender       = try container.decode(Sender.self, forKey: .sender)
+    self.deliveryFee = try container.decode(String.self, forKey: .deliveryFee)
+    self.surcharge = try container.decode(String.self, forKey: .surcharge)
+    self.route = try container.decode(Route.self, forKey: .route)
+    self.sender = try container.decode(Sender.self, forKey: .sender)
+    self.isFavorite = try container.decodeIfPresent(Bool.self, forKey: .isFavorite) ?? false
+  }
+  
+  // MARK: - Conformance to Encodable
+  
+  func encode(to encoder: Encoder) throws {
     
-    self.isFavorite   = (try? container.decode(Bool.self, forKey: .isFavorite)) ?? false
+    var container = encoder.container(keyedBy: CodingKeys.self)
+    
+    try container.encode(id, forKey: .id)
+    try container.encode(remarks, forKey: .remarks)
+    try container.encode(pickupTime, forKey: .pickupTime)
+    try container.encode(goodsPicture, forKey: .goodsPicture)
+    try container.encode(deliveryFee, forKey: .deliveryFee)
+    try container.encode(surcharge, forKey: .surcharge)
+    try container.encode(route, forKey: .route)
+    try container.encode(sender, forKey: .sender)
+    try container.encode(isFavorite, forKey: .isFavorite)
   }
   
   // MARK: - Public Methods
   
   public func getComputedDeliveryFee() -> Double? {
-  
+    
     guard let deliveryFee = getDoubleValue(for: self.deliveryFee),
           let surcharge = getDoubleValue(for: self.surcharge) else {
       

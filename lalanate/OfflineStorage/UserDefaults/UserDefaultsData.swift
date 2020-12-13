@@ -7,9 +7,9 @@
 
 import Foundation
 
-class UserDefaultsStorage {
+class UserDefaultsData {
   
-  static let shared = UserDefaultsStorage()
+  static let shared = UserDefaultsData()
   private init() {}
   
   @UserDefaultsObject(key: "deliveries")
