@@ -75,12 +75,24 @@ class DeliveriesVM: BaseVM {
       
       print("success")
       
+      var favoriteIDs = [String]()
+      
       if offset == 0 {
+        
+        // Get the IDs of favorites
+        favoriteIDs = self.deliveries.filter({ $0.isFavorite }).map({ $0.id })
+        
         self.deliveries.removeAll()
         self.deliveryPersister.removeAllDeliveries()
       }
       
-      self.deliveries.append(contentsOf: deliveries)
+      // Mark new data as favorite according to the old list of favorites
+      let updatedDeliveries = deliveries.map { (delivery) -> Delivery in
+        delivery.isFavorite = favoriteIDs.contains(delivery.id)
+        return delivery
+      }
+      
+      self.deliveries.append(contentsOf: updatedDeliveries)
       self.deliveryPersister.saveDeliveries(deliveries: self.deliveries)
       
       self.getDeliveriesSuccess.accept(true)
