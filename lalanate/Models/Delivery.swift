@@ -5,8 +5,8 @@
 //  Created by Nathaniel Brion Sison on 12/11/20.
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 @objc(Delivery)
 class Delivery: NSManagedObject, Codable {

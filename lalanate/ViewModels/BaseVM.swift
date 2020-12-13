@@ -6,8 +6,8 @@
 //
 
 import Moya
-import RxSwift
 import RxCocoa
+import RxSwift
 
 class BaseVM {
   
@@ -18,18 +18,4 @@ class BaseVM {
   
   public var isBusy = BehaviorRelay<Bool>(value: false)
   public var errorMessage = BehaviorRelay<String>(value: "")
-  
-  // MARK: - Public Methods
-  
-  public func toggleIsBusy(to isBusy: Bool) {
-    self.isBusy.accept(isBusy)
-    if isBusy {
-      errorMessage.accept("")
-    }
-  }
-  
-  public func publishErrorMessage(_ errorMessage: String) {
-    isBusy.accept(false)
-    self.errorMessage.accept(errorMessage)
-  }
 }

@@ -5,9 +5,9 @@
 //  Created by Nathaniel Brion Sison on 12/10/20.
 //
 
-import UIKit
-import SnapKit
 import Kingfisher
+import SnapKit
+import UIKit
 
 class DeliveryCell: UITableViewCell {
   

@@ -5,9 +5,9 @@
 //  Created by Nathaniel Brion Sison on 12/10/20.
 //
 
-import UIKit
-import SnapKit
 import RxSwift
+import SnapKit
+import UIKit
 
 class DeliveriesVC: UIViewController {
   
@@ -17,6 +17,11 @@ class DeliveriesVC: UIViewController {
     let tv = UITableView()
     tv.separatorStyle = .none
     return tv
+  }()
+  
+  private lazy var bottomActivityIndicator: UIActivityIndicatorView = {
+    let ai = UIActivityIndicatorView()
+    return ai
   }()
   
   // MARK: - Private Props
@@ -52,7 +57,16 @@ class DeliveriesVC: UIViewController {
     
     vm.isBusy
       .subscribe(onNext: { isBusy in
-        isBusy ? self.refreshControl.beginRefreshing() : self.refreshControl.endRefreshing()
+        isBusy
+          ? self.refreshControl.beginRefreshing()
+          : self.refreshControl.endRefreshing()
+      }).disposed(by: disposeBag)
+    
+    vm.isFetchingMorePages
+      .subscribe(onNext: { isFetchingMorePages in
+        isFetchingMorePages
+          ? self.bottomActivityIndicator.startAnimating()
+          : self.bottomActivityIndicator.stopAnimating()
       }).disposed(by: disposeBag)
     
     vm.getDeliveriesSuccess
@@ -115,6 +129,10 @@ extension DeliveriesVC: UITableViewDataSource {
 
 extension DeliveriesVC: UITableViewDelegate {
   
+  func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    return bottomActivityIndicator
+  }
+  
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
     let deliveryDetailsVC = DeliveryDetailsVC(delivery: vm.deliveries[indexPath.row])
@@ -132,7 +150,7 @@ extension DeliveriesVC: UITableViewDelegate {
     
     let frameMaxY = scrollView.frame.maxY
     let contentMaxY = scrollView.contentSize.height - scrollView.contentOffset.y
-    
+
     if contentMaxY < frameMaxY {
       vm.getDeliveries(offset: vm.deliveries.count)
     }

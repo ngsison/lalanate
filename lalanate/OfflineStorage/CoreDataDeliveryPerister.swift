@@ -5,7 +5,6 @@
 //  Created by Nathaniel Brion Sison on 12/13/20.
 //
 
-import Foundation
 import CoreData
 
 /**

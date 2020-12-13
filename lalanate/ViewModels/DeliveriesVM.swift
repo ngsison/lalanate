@@ -5,6 +5,7 @@
 //  Created by Nathaniel Brion Sison on 12/11/20.
 //
 
+import CoreData
 import Foundation
 import RxCocoa
 
@@ -12,6 +13,7 @@ class DeliveriesVM: BaseVM {
   
   // MARK: - Public Props
   
+  public var isFetchingMorePages = BehaviorRelay<Bool>(value: false)
   public var getDeliveriesSuccess = BehaviorRelay<Bool>(value: false)
   public var deliveries: [Delivery]
   
@@ -50,6 +52,7 @@ class DeliveriesVM: BaseVM {
   public func getDeliveries(offset: Int = 0) {
     
     guard !isBusy.value,
+          !isFetchingMorePages.value,
           offset < totalPages * itemPerPage else {
       return
     }
@@ -57,13 +60,12 @@ class DeliveriesVM: BaseVM {
     print("offset: \(offset)")
     
     if offset == 0 {
-      deliveries.removeAll()
-      getDeliveriesSuccess.accept(true)
+      isBusy.accept(true)
+    } else {
+      isFetchingMorePages.accept(true)
     }
     
     let target = DeliveriesAPI.getDeliveries(offset: offset, limit: itemPerPage)
-    
-    toggleIsBusy(to: true)
     
     httpClient.request(target: target) { (response) -> [Delivery] in
       
@@ -73,18 +75,27 @@ class DeliveriesVM: BaseVM {
       
       print("success")
       
+      if offset == 0 {
+        self.deliveries.removeAll()
+        self.deliveryPersister.removeAllDeliveries()
+      }
+      
       self.deliveries.append(contentsOf: deliveries)
       self.deliveryPersister.saveDeliveries(deliveries: self.deliveries)
       
-      self.toggleIsBusy(to: false)
       self.getDeliveriesSuccess.accept(true)
+      
+      self.isBusy.accept(false)
+      self.isFetchingMorePages.accept(false)
     },
     onError: { error in
       
       print("failed")
       print(error.localizedDescription)
       
-      self.publishErrorMessage("Something went wrong")
+      self.isBusy.accept(false)
+      self.isFetchingMorePages.accept(false)
+      self.errorMessage.accept("Something went wrong")
       
     }).disposed(by: disposeBag)
   }

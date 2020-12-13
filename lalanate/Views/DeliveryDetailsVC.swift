@@ -5,8 +5,8 @@
 //  Created by Nathaniel Brion Sison on 12/11/20.
 //
 
-import UIKit
 import SnapKit
+import UIKit
 
 protocol DeliveryDetailsDelegate {
   func deliveryDetails(_ deliveryDetailsVC: DeliveryDetailsVC, didToggleFavoriteFor delivery: Delivery)
