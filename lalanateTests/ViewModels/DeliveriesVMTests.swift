@@ -13,10 +13,11 @@ import lalanate
 class DeliveriesVMTests: XCTestCase {
   
   private var vm: DeliveriesVM!
+  private let deliveryPersister = InMemoryPersister()
   
   override func setUpWithError() throws {
     
-    vm = DeliveriesVM(deliveryPersister: InMemoryPersister())
+    vm = DeliveriesVM(deliveryPersister: deliveryPersister)
     vm.httpClient.provider = LalaHttpClient.fakeMoyaProvider(statusCode: 200, responseDelay: 0)
   }
   
@@ -24,9 +25,21 @@ class DeliveriesVMTests: XCTestCase {
     
     // arrange
     
+    let delivery = Delivery(context: getInMemoryManagedObjectContext())
+    delivery.isFavorite = false
+    
+    vm.deliveries = [delivery]
+    
     // act
     
+    vm.toggleFavorite(for: delivery)
+    
     // assert
+    
+    let persistedDelivery = deliveryPersister.loadDeliveries()!.first!
+    
+    XCTAssertTrue(persistedDelivery.isFavorite)
+    XCTAssertTrue(vm.getDeliveriesSuccess.value)
   }
 }
 
