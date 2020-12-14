@@ -88,8 +88,8 @@ class Delivery: NSManagedObject, Codable {
     // Sample pickupTime: 2014-10-06T10:45:38-08:00
     
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-    dateFormatter.timeZone = TimeZone(secondsFromGMT: 3600 * 8)
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+    dateFormatter.timeZone = TimeZone(secondsFromGMT: -(3600 * 8))
     
     return dateFormatter.date(from: pickupTime)
   }
