@@ -22,12 +22,15 @@ class DeliveriesVM: BaseVM {
   private let totalPages = 5
   private let itemPerPage = 10
   
-  // Value can be replaced with `UserDefaultsDeliveryPersister.shared`
-  private let deliveryPersister: DeliveryPersister = CoreDataDeliveryPerister.shared
+  private var deliveryPersister: DeliveryPersister
   
   // MARK: - Lifecycle Events
   
-  override init() {
+  init(deliveryPersister: DeliveryPersister = CoreDataDeliveryPerister.shared) {
+    
+    // deliveryPersister can also be `UserDefaultsDeliveryPersister.shared`
+    
+    self.deliveryPersister = deliveryPersister
     self.deliveries = deliveryPersister.loadDeliveries() ?? [Delivery]()
     super.init()
   }
