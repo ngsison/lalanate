@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return true
   }
   
+  /**
+   Initialize network logger, "shake" to see network logs.
+   */
   private func setUpNetfox() {
     
     #if DEBUG
