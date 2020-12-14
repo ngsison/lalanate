@@ -20,4 +20,8 @@ target 'lalanate' do
   pod 'RxSwift', '5.1.1'
   pod 'RxCocoa', '5.1.1'
   
+  target 'lalanateTests' do
+    inherit! :search_paths
+  end
+  
 end
