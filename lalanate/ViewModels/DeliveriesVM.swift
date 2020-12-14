@@ -106,11 +106,10 @@ class DeliveriesVM: BaseVM {
     onError: { error in
       
       print("failed")
-      print(error.localizedDescription)
       
       self.isBusy.accept(false)
       self.isFetchingMorePages.accept(false)
-      self.errorMessage.accept("Something went wrong")
+      self.errorMessage.accept("Something went wrong: \(error.localizedDescription)")
       
     }).disposed(by: disposeBag)
   }

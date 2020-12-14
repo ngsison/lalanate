@@ -78,7 +78,14 @@ class DeliveriesVC: UIViewController {
     vm.errorMessage
       .filter({ !$0.isEmpty })
       .subscribe(onNext: { errorMessage in
-        print(errorMessage)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        let alert = UIAlertController(title: "Oops!", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true, completion: nil)
+        
       }).disposed(by: disposeBag)
   }
   
