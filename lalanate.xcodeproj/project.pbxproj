@@ -36,6 +36,8 @@
 		20A3E8522587936000C7C515 /* UIViewExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A3E8512587936000C7C515 /* UIViewExtensionTests.swift */; };
 		20A3E859258794FD00C7C515 /* LalaHttpClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A3E858258794FD00C7C515 /* LalaHttpClientTests.swift */; };
 		20A3E86025879C1500C7C515 /* DeliveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A3E85F25879C1500C7C515 /* DeliveryTests.swift */; };
+		20A3E9162587BC2C00C7C515 /* DeliveriesVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A3E9152587BC2C00C7C515 /* DeliveriesVMTests.swift */; };
+		20A3E91C2587BEC900C7C515 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A3E91B2587BEC900C7C515 /* CoreDataHelper.swift */; };
 		20DA438C2582459700971474 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA438B2582459700971474 /* AppDelegate.swift */; };
 		20DA43952582459900971474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20DA43942582459900971474 /* Assets.xcassets */; };
 		20DA43982582459900971474 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DA43962582459900971474 /* LaunchScreen.storyboard */; };
@@ -90,6 +92,8 @@
 		20A3E8512587936000C7C515 /* UIViewExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensionTests.swift; sourceTree = "<group>"; };
 		20A3E858258794FD00C7C515 /* LalaHttpClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LalaHttpClientTests.swift; sourceTree = "<group>"; };
 		20A3E85F25879C1500C7C515 /* DeliveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTests.swift; sourceTree = "<group>"; };
+		20A3E9152587BC2C00C7C515 /* DeliveriesVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesVMTests.swift; sourceTree = "<group>"; };
+		20A3E91B2587BEC900C7C515 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		20DA43882582459700971474 /* lalanate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lalanate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20DA438B2582459700971474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20DA43942582459900971474 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 				20A3E8482587915D00C7C515 /* Extensions */,
 				20A3E857258794E000C7C515 /* Networking */,
 				20A3E85E25879BFA00C7C515 /* Models */,
+				20A3E9142587BC1500C7C515 /* ViewModels */,
 				20A3E7B625878C7100C7C515 /* Info.plist */,
 			);
 			path = lalanateTests;
@@ -272,8 +277,17 @@
 			isa = PBXGroup;
 			children = (
 				20A3E85F25879C1500C7C515 /* DeliveryTests.swift */,
+				20A3E91B2587BEC900C7C515 /* CoreDataHelper.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		20A3E9142587BC1500C7C515 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				20A3E9152587BC2C00C7C515 /* DeliveriesVMTests.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		20DA437F2582459700971474 = {
@@ -518,8 +532,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20A3E91C2587BEC900C7C515 /* CoreDataHelper.swift in Sources */,
 				20A3E8522587936000C7C515 /* UIViewExtensionTests.swift in Sources */,
 				20A3E86025879C1500C7C515 /* DeliveryTests.swift in Sources */,
+				20A3E9162587BC2C00C7C515 /* DeliveriesVMTests.swift in Sources */,
 				20A3E84A2587917F00C7C515 /* UIColorExtensionTests.swift in Sources */,
 				20A3E859258794FD00C7C515 /* LalaHttpClientTests.swift in Sources */,
 			);

@@ -5,7 +5,6 @@
 //  Created by Nathaniel Brion Sison on 12/14/20.
 //
 
-import CoreData
 import XCTest
 
 @testable
@@ -63,24 +62,4 @@ class DeliveryTests: XCTestCase {
     
     XCTAssertEqual(formattedDate, "2014-10-06T10:45:38-08:00")
   }
-}
-
-// MARK: - CoreData Helper
-
-fileprivate func getInMemoryManagedObjectContext() -> NSManagedObjectContext {
-  
-  let managedObjectModel = NSManagedObjectModel.mergedModel(from: [Bundle.main])!
-  
-  let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
-  
-  do {
-    try persistentStoreCoordinator.addPersistentStore(ofType: NSInMemoryStoreType, configurationName: nil, at: nil, options: nil)
-  } catch {
-    print("Adding in-memory persistent store failed")
-  }
-  
-  let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-  managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
-  
-  return managedObjectContext
 }
