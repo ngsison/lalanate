@@ -19,6 +19,13 @@ class DeliveriesVMTests: XCTestCase {
     
     vm = DeliveriesVM(deliveryPersister: deliveryPersister)
     vm.httpClient.provider = LalaHttpClient.fakeMoyaProvider(statusCode: 200, responseDelay: 0)
+    
+    vm.deliveries = [Delivery]()
+    deliveryPersister.removeAllDeliveries()
+    
+    vm.isBusy.accept(false)
+    vm.isFetchingMorePages.accept(false)
+    vm.getDeliveriesSuccess.accept(false)
   }
   
   func testToggleFavorite() {
@@ -39,6 +46,42 @@ class DeliveriesVMTests: XCTestCase {
     let persistedDelivery = deliveryPersister.loadDeliveries()!.first!
     
     XCTAssertTrue(persistedDelivery.isFavorite)
+    XCTAssertTrue(vm.getDeliveriesSuccess.value)
+  }
+  
+  func testGetDeliveriesWithZeroOffset() {
+    
+    // act
+    
+    vm.getDeliveries()
+    
+    // assert
+    
+    XCTAssertEqual(vm.deliveries.count, 10)
+    XCTAssertEqual(deliveryPersister.loadDeliveries()!.count, 10)
+    
+    XCTAssertFalse(vm.isBusy.value)
+    XCTAssertFalse(vm.isFetchingMorePages.value)
+    XCTAssertTrue(vm.getDeliveriesSuccess.value)
+  }
+  
+  func testGetDeliveriesWithTenOffset() {
+    
+    // arrange
+    
+    vm.getDeliveries()
+    
+    // act
+    
+    vm.getDeliveries(offset: 10)
+    
+    // assert
+    
+    XCTAssertEqual(vm.deliveries.count, 20)
+    XCTAssertEqual(deliveryPersister.loadDeliveries()!.count, 20)
+    
+    XCTAssertFalse(vm.isBusy.value)
+    XCTAssertFalse(vm.isFetchingMorePages.value)
     XCTAssertTrue(vm.getDeliveriesSuccess.value)
   }
 }
