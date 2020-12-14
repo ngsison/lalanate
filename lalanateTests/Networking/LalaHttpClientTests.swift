@@ -48,9 +48,9 @@ class LalaHttpClientTests: XCTestCase {
     
     let employeeNames = fetchedEmployees.map { "\($0.firstName) \($0.lastName)" }
   
-    XCTAssert(employeeNames.count == 2)
-    XCTAssert(employeeNames[0] == "Bill Gates")
-    XCTAssert(employeeNames[1] == "Steve Jobs")
+    XCTAssertEqual(employeeNames.count, 2)
+    XCTAssertEqual(employeeNames[0], "Bill Gates")
+    XCTAssertEqual(employeeNames[1], "Steve Jobs")
   }
 }
 

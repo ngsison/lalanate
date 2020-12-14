@@ -24,8 +24,8 @@ class UIViewExtensionTests: XCTestCase {
     
     // assert
     
-    XCTAssert(imageView.clipsToBounds)
-    XCTAssert(imageView.layer.cornerRadius == 20)
+    XCTAssertTrue(imageView.clipsToBounds)
+    XCTAssertEqual(imageView.layer.cornerRadius, 20)
   }
   
   func testSetSelectedCornerRadius() {
@@ -43,8 +43,8 @@ class UIViewExtensionTests: XCTestCase {
     
     // assert
     
-    XCTAssert(imageView.clipsToBounds)
-    XCTAssert(imageView.layer.cornerRadius == radius)
-    XCTAssert(imageView.layer.maskedCorners == corners)
+    XCTAssertTrue(imageView.clipsToBounds)
+    XCTAssertEqual(imageView.layer.cornerRadius, radius)
+    XCTAssertEqual(imageView.layer.maskedCorners, corners)
   }
 }

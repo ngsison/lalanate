@@ -31,9 +31,9 @@ class UIColorExtensionTests: XCTestCase {
     
     // assert
     
-    XCTAssert(red == 255)
-    XCTAssert(green == 255)
-    XCTAssert(blue == 255)
+    XCTAssertEqual(red, 255)
+    XCTAssertEqual(green, 255)
+    XCTAssertEqual(blue, 255)
   }
   
   func testHexInitializerLowercased() {
@@ -55,8 +55,8 @@ class UIColorExtensionTests: XCTestCase {
     
     // assert
     
-    XCTAssert(red == 255)
-    XCTAssert(green == 255)
-    XCTAssert(blue == 255)
+    XCTAssertEqual(red, 255)
+    XCTAssertEqual(green, 255)
+    XCTAssertEqual(blue, 255)
   }
 }
