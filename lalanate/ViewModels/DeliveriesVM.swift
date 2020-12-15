@@ -78,18 +78,25 @@ class DeliveriesVM: BaseVM {
       
       print("success")
       
-      var favoriteIDs = [String]()
+      /*
+       Get the IDs of favorites
+       */
+      
+      let favoriteIDs = self.deliveries.filter({ $0.isFavorite }).map({ $0.id })
+      
+      /*
+       Remove all deliveries if user fetch deliveries for the first time or performed pull to refresh
+       */
       
       if offset == 0 {
-        
-        // Get the IDs of favorites
-        favoriteIDs = self.deliveries.filter({ $0.isFavorite }).map({ $0.id })
-        
         self.deliveries.removeAll()
         self.deliveryPersister.removeAllDeliveries()
       }
       
-      // Mark new data as favorite according to the old list of favorites
+      /*
+       Mark new data as favorite according to the old list of favorites
+       */
+      
       let updatedDeliveries = deliveries
         .map { (delivery) -> Delivery in
           delivery.isFavorite = favoriteIDs.contains(delivery.id)
@@ -97,10 +104,22 @@ class DeliveriesVM: BaseVM {
         }
         .sorted(by: { $0.createdAt < $1.createdAt })
       
+      /*
+       Populate deliveries then save to local storage
+       */
+      
       self.deliveries.append(contentsOf: updatedDeliveries)
       self.deliveryPersister.saveDeliveries(deliveries: self.deliveries)
       
+      /*
+       Reload tableView
+       */
+      
       self.getDeliveriesSuccess.accept(true)
+      
+      /*
+       Turn off activity indicator
+       */
       
       self.isBusy.accept(false)
       self.isFetchingMorePages.accept(false)
