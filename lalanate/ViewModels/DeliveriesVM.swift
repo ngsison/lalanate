@@ -48,6 +48,9 @@ class DeliveriesVM: BaseVM {
       return oldDelivery
     })
     
+    let favoriteIDs = deliveries.filter({ $0.isFavorite }).map({ $0.id })
+    UserPreference.shared.favoriteIDs = Set(favoriteIDs)
+    
     deliveryPersister.saveDeliveries(deliveries: deliveries)
     getDeliveriesSuccess.accept(true)
   }
@@ -79,12 +82,6 @@ class DeliveriesVM: BaseVM {
       print("success")
       
       /*
-       Get the IDs of favorites
-       */
-      
-      let favoriteIDs = self.deliveries.filter({ $0.isFavorite }).map({ $0.id })
-      
-      /*
        Remove all deliveries if user fetch deliveries for the first time or performed pull to refresh
        */
       
@@ -94,12 +91,14 @@ class DeliveriesVM: BaseVM {
       }
       
       /*
-       Mark new data as favorite according to the old list of favorites
+       Mark new data as favorite according to the saved list of favorites
        */
+      
+      let favoriteIDs = UserPreference.shared.favoriteIDs
       
       let updatedDeliveries = deliveries
         .map { (delivery) -> Delivery in
-          delivery.isFavorite = favoriteIDs.contains(delivery.id)
+          delivery.isFavorite = favoriteIDs?.contains(delivery.id) ?? false
           return delivery
         }
         .sorted(by: { $0.createdAt < $1.createdAt })
