@@ -31,7 +31,7 @@ class DeliveriesVM: BaseVM {
     // deliveryPersister can also be `UserDefaultsDeliveryPersister.shared`
     
     self.deliveryPersister = deliveryPersister
-    self.deliveries = deliveryPersister.loadDeliveries() ?? [Delivery]()
+    self.deliveries = deliveryPersister.loadDeliveries()?.sorted(by: { $0.createdAt < $1.createdAt }) ?? [Delivery]()
     super.init()
   }
   
@@ -90,10 +90,12 @@ class DeliveriesVM: BaseVM {
       }
       
       // Mark new data as favorite according to the old list of favorites
-      let updatedDeliveries = deliveries.map { (delivery) -> Delivery in
-        delivery.isFavorite = favoriteIDs.contains(delivery.id)
-        return delivery
-      }
+      let updatedDeliveries = deliveries
+        .map { (delivery) -> Delivery in
+          delivery.isFavorite = favoriteIDs.contains(delivery.id)
+          return delivery
+        }
+        .sorted(by: { $0.createdAt < $1.createdAt })
       
       self.deliveries.append(contentsOf: updatedDeliveries)
       self.deliveryPersister.saveDeliveries(deliveries: self.deliveries)

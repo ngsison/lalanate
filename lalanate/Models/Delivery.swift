@@ -27,6 +27,7 @@ class Delivery: NSManagedObject, Codable {
   @NSManaged public var route: Route
   @NSManaged public var sender: Sender
   @NSManaged public var isFavorite: Bool
+  @NSManaged public var createdAt: Date
   
   // MARK: - Conformance to Decodable
   
@@ -40,6 +41,7 @@ class Delivery: NSManagedObject, Codable {
     case route
     case sender
     case isFavorite
+    case createdAt
   }
   
   required convenience init(from decoder: Decoder) throws {
@@ -62,6 +64,7 @@ class Delivery: NSManagedObject, Codable {
     self.route = try container.decode(Route.self, forKey: .route)
     self.sender = try container.decode(Sender.self, forKey: .sender)
     self.isFavorite = try container.decodeIfPresent(Bool.self, forKey: .isFavorite) ?? false
+    self.createdAt = try container.decodeIfPresent(Date.self, forKey: .createdAt) ?? Date()
   }
   
   // MARK: - Conformance to Encodable
@@ -79,6 +82,7 @@ class Delivery: NSManagedObject, Codable {
     try container.encode(route, forKey: .route)
     try container.encode(sender, forKey: .sender)
     try container.encode(isFavorite, forKey: .isFavorite)
+    try container.encode(createdAt, forKey: .createdAt)
   }
   
   // MARK: - Public Methods
